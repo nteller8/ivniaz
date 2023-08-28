@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Géneros</title>
+</head>
+
+<body>
+
+    <header>
+
+        <section class="header">
+            <article>
+                <a  href="./index.html">
+                    <img src="./img/logo.png" alt="logo">
+                </a>
+            </article>   
+            <article class="barranav">
+                <a href="./index.html"> HOME </a>
+                <a href="./genres.html"> GÉNEROS </a>
+                <a href="./favoritos.html"> FAVORITOS </a>   
+            </article>
+            <article class="cuadrado"><h2><i class="fa-solid fa-bars"></i></h2></article>
+            <article>
+                <form class="busqueda" action="./search-results.html" method="GET">
+                    <input class="opcion" type="radio" name = "media" value = "all" checked>
+                    <label for="">Todo</label>
+                    <input class="opcion" type="radio" name="media" value="peliculas">
+                    <label for=""> Películas </label> 
+                    <input class="opcion" type="radio" name="media" value="series">
+                    <label for=""> Series </label>
+
+                    <input class= "search" name = "buscador" placeholder = "Buscar" type="text">
+                    <button class="bottonsearch" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>  
+                    <p class="texto-usuario"></p>  
+                </form>
+            </article>
+        </section>
+    
+    </header>
+
+<main class="cuerpo_generos">
+    <h1 class="titulo_generos">Géneros</h1>
+    
+    <h2 class="h2_genero">Peliculas</h2>
+    <section class="cajapadre">
+        
+
+        <!--article class="cajahijo">
+                <a href="./detail-generes.html"> Comedia </a>  
+        </article>
+        <article class="cajahijo">
+            <a href="./detail-generes.html"> Infantiles </a>  
+        </article>
+        <article class="cajahijo">
+            <a href="./detail-generes.html"> Ciencia ficción </a>  
+        </article>
+        <article class="cajahijo">
+            <a href="./detail-generes.html"> Romance </a>  
+        </article>
+        <article class="cajahijo">
+            <a href="./detail-generes.html"> Drama </a>  
+        </article>
+        <article class="cajahijo">
+            <a href="./detail-generes.html"> Acción </a>  
+        </article>
+        <article class="cajahijo">
+            <a href="./detail-generes.html"> Terror </a>  
+        </article-->
+    </section>
+
+</section>
+
+    <h2 class="h2_genero"> Series</h2>
+    <section class="cajapadre2">
+
+    </section>
+  
+
+    
+</main>
+
+    <footer class="footer">
+        <p>Autores: Ivanka Del Mastro & Victoria Sassoon</p>
+        <img class="logo_footer" src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_long_1-8ba2ac31f354005783fab473602c34c3f4fd207150182061e425d366e4f34596.svg" alt="">
+        <p>© 2001-2022 PlayMovie, Inc (d78383-c92736)</p>
+    </footer>
+    
+<script src="./js/genres.js"></script>
+<script src="./js/detail-generes.js"></script>
+<script src="./js/buscador.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/styles.css">
+    <title> Resultados de busqueda </title>
+</head>
+
+<body>
+
+    <header>
+
+        <section class="header">
+            <article>
+                <a  href="./index.html">
+                    <img src="./img/logo.png" alt="logo">
+                </a>
+            </article>   
+            <article class="barranav">
+                <a href="./index.html"> HOME </a>
+                <a href="./genres.html"> GÉNEROS </a>
+                <a href="./favoritos.html"> FAVORITOS </a>   
+            </article>
+            <article class="cuadrado"><h2><i class="fa-solid fa-bars"></i></h2></article>
+            <article>
+                <form class="busqueda" action="./search-results.html" method="GET">
+                    <input class="opcion" type="radio" name = "media" value = "all" checked>
+                    <label for="">Todo</label>
+                    <input class="opcion" type="radio" name="media" value="peliculas">
+                    <label for=""> Películas </label> 
+                    <input class="opcion" type="radio" name="media" value="series">
+                    <label for=""> Series </label>
+
+                    <input class= "search" name = "buscador" placeholder = "Buscar" type="text">
+                    <button class="bottonsearch" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>  
+                    <p class="texto-usuario"></p>  
+                </form>
+            </article>
+        </section>
+    
+    </header>
+  
+    
+<main class="main-resultados">
+
+    <h1 class="h1_search"> Resultados de búsqueda:  </h1>
+    <h2 class="texto"> </h2>
+    <img class="gif" src="./img/1amw.gif" alt="gif">
+
+    <section class="resultados_peliculas"> </section>
+
+
+</section>
+
+</main>
+
+
+
+
+<footer class="footer">
+    <p>Autores: Ivanka Del Mastro & Victoria Sassoon</p>
+    <img class="logo_footer" src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_long_1-8ba2ac31f354005783fab473602c34c3f4fd207150182061e425d366e4f34596.svg" alt="">
+    <p>© 2001-2022 PlayMovie, Inc (d78383-c92736)</p>
+</footer>
+  
+<script src="./js/search-results_peliculas.js"></script>
+<script src="./js/search-results_series.js"></script>
+<script src="./js/buscador.js"></script>
+
+
+
+</body>
+</html>

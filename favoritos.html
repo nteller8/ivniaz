@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Favoritos</title>
+</head>
+
+<body>
+    
+    <header>
+
+        <section class="header">
+            <article>
+                <a  href="./index.html">
+                    <img src="./img/logo.png" alt="logo">
+                </a>
+            </article>   
+            <article class="barranav">
+                <a href="./index.html"> HOME </a>
+                <a href="./genres.html"> GÉNEROS </a>
+                <a href="./favoritos.html"> FAVORITOS </a>   
+            </article>
+            <article class="cuadrado"><h2><i class="fa-solid fa-bars"></i></h2></article>
+            <article>
+                <form class="busqueda" action="./search-results.html" method="GET">
+                    <input class="opcion" type="radio" name = "media" value = "all" checked>
+                    <label for="">Todo</label>
+                    <input class="opcion" type="radio" name="media" value="peliculas">
+                    <label for=""> Películas </label> 
+                    <input class="opcion" type="radio" name="media" value="series">
+                    <label for=""> Series </label>
+
+                    <input class= "search" name = "buscador" placeholder = "Buscar" type="text">
+                    <button class="bottonsearch" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>  
+                    <p class="texto-usuario"></p>  
+                </form>
+            </article>
+        </section>
+    
+    </header>
+    
+    
+<main class="main-favoritos">
+    <section class="seccion-favoritos">
+        <h1> Mis favoritos </h1>
+        <h2> Peliculas favoritas </h2>
+        <article class="favoritos-peliculas">
+        <section class="peliculas_populares"></section>
+            
+        </article>
+        
+        <h2> Series Favoritas</h2>
+        <article class="favoritos-series">
+        <section class = "series_populares" ></section>
+
+        </article>
+    <!--h1 class="titulocomedia">Favoritos</h1>
+    
+    <h2 class = "titulo_ppl"> Tus Peliculas Favoritas </h2>
+    <section class="peliculas_populares">
+    
+        <article class="pelicula">
+            <a class = "hipervinculo" href="./detail_movie.html">
+                <img class="imagenPP" src="img/increibles.jpeg" alt="Top Gun"> 
+                <p class = 'titulo'> Los increíbles</p>
+                <p class = 'estreno'> 18-02-2013</p> 
+            </a>
+        </article>
+        
+        <article class = "pelicula">  
+            <a class = "hipervinculo" href="./detail_movie.html"> 
+                <img class="imagenPP" src="img/soncomoniños.jpeg" alt=""> 
+                <p class = 'titulo'> Son como niños</p>     
+                <p class = 'estreno'> 02-06-2011</p> 
+            </a>
+        </article> 
+                
+       
+    <article class = "pelicula">  
+        <a class = "hipervinculo" href="./detail_movie.html"> 
+            <img class="imagenPP" src="img/locura.jpeg" alt=""> 
+            <p class = 'titulo'> Locura de amor en Las Vegas</p>
+            <p class = 'estreno'> 21-10-2014</p> 
+        </a> 
+    </article>
+       
+    
+       
+    <article class = "pelicula">  
+        <a class = "hipervinculo" href="./detail_movie.html">
+            <img class="imagenPP" src="img/avengers.jpeg" alt="">
+                <p class = 'titulo'> Avengers: Inifnity War</p>
+                <p class = 'estreno'> 29-04-2019</p> 
+        </a> 
+    </article>
+       
+      
+    </section>
+
+
+    <h2 class = "titulo_ppl"> Tus Series Favoritas </h2>
+    <section class="peliculas_populares">
+    
+        <article class="pelicula">
+            <a class = "hipervinculo" href="./detail_serie.html">
+                <img class="imagenPP" src="img/greys.jpeg" alt="Top Gun"> 
+                <p class = 'titulo'> Greys´s Anatomy</p>
+                <p class = 'estreno'> 01-01-2009</p> 
+            </a>
+        </article>
+        
+        <article class = "pelicula">  
+            <a class = "hipervinculo" href="./detail_serie.html"> 
+                <img class="imagenPP" src="img/gossip.webp" alt=""> 
+                <p class = 'titulo'> Gossip Girl</p>     
+                <p class = 'estreno'> 04-03-2008</p> 
+
+            </a>
+        </article--> 
+
+
+
+</main> 
+<footer class="footer">
+    <p>Autores: Ivanka Del Mastro & Victoria Sassoon</p>
+    <img class="logo_footer" src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_long_1-8ba2ac31f354005783fab473602c34c3f4fd207150182061e425d366e4f34596.svg" alt="">
+    <p>© 2001-2022 PlayMovie, Inc (d78383-c92736)</p>
+</footer>
+
+
+<script src="./js/buscador.js"></script>
+<script src="./js/favoritos.js"></script>
+<script src="./js/detail-movie.js"></script>
+<script src="./js/detail-series.js"></script>
+
+
+</body>
+
+</html>
