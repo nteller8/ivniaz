@@ -5,10 +5,10 @@ import Footer from "../../components/Footer/Footer";
 function Home() {
   return (
     <React.Fragment>
-      <Header />
+      
       <h1>Home</h1>
       <p>Descripcion de la home</p>
-      <Footer />
+      
     </React.Fragment>
   );
 }
