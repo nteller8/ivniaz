@@ -7,7 +7,7 @@ function App() {
     <React.Fragment>
     
       <Header/>
-      ghjgyiggfldkf
+     
       <Footer/>
   
     </React.Fragment>

@@ -1,23 +1,17 @@
 import React, { Component } from "react";
 import "./Footer.css";
 
-class Footer extends Component {
-  constructor() {
-    super();
-    this.state = {
-      modoOscuro: false,
-      textoModoOscuro: "Modo Oscuro",
-    };
-  }
 
-  render(){
-    return(
-      <>
-      Footer
-      </>
-    )
-  }
-
+function Footer () {
+  return (
+  <footer className="Footer">
+   <footer class="footer">
+    <p>Autores: Ivanka Del Mastro - Nina Teller - Azul Bidner</p>
+    
+    <p>© 2001-2022 PlayMovie, Inc (d78383-c92736)</p>
+</footer>
+        </footer>
+)
 }
-
 export default Footer;
+
