@@ -3,7 +3,7 @@ import React from "react";
 import "./Header.css";
 import { Link } from "react-router-dom";
 
-
+//meter logo y barra de navegacion
 function Header () {
   return (
     <React.Fragment>
