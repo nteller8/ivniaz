@@ -1,15 +1,61 @@
 import React from "react";
+import { Component } from "react";
+import Header from "../../components/Header/Header";
 
-function Home() {
-  return (
-    <React.Fragment>
-      
-  
-      <h1 style={{color: "white"}}> Peliculas más populares</h1>
-      <h1 style={{color: "white"}}> Peliculas en cartel</h1>
-    </React.Fragment>
-  );
-  //peliculas_populares
+
+
+
+class Home extends Component {
+  constructor() {
+    super();
+    this.state = {
+      pelispopulares: [],
+      pelisencartel: [],
+  };
 }
 
-export default Home;
+  componentDidMount() {
+    //BUscamos datos
+    fetch(
+      `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc`
+    ) //chequear si esta bien la api
+      .then((res) => res.json())
+      .then((data) =>
+        this.setState({
+          pelisencartel: data,
+        })
+      )
+      .catch();
+
+      fetch(
+        `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_release_type=2|3&release_date.gte={min_date}&release_date.lte={max_date}'`
+      ) //chequear si esta bien la api
+        .then((res) => res.json())
+        .then((data) =>
+          this.setState({
+            pelispopulares: data,
+          })
+        )
+        .catch();
+      
+  }}
+  
+  render() {
+    return (
+      <React.Fragment>
+      {/* meter la barra de navegador buscador aca */}
+      <Header/>
+        {/* aca va el section de peliculas populares */}
+        <h2 class = "titulo_ppl">Peliculas populares</h2>
+        {/* aca va el section de peliculas en cartelera */}
+        <h2 class = "titulo_ppl">Peliculas en cartelera</h2>
+
+
+        <Footer />
+
+      </React.Fragment>
+    );
+  }
+
+
+export default Home
