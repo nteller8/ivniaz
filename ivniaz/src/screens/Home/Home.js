@@ -1,13 +1,11 @@
 import React from "react";
-import Header from "../../components/Header/Header";
-import Footer from "../../components/Footer/Footer";
 
 function Home() {
   return (
     <React.Fragment>
       
-      <h1>Home</h1>
-      <p>Descripcion de la home</p>
+  
+      <p style={{color: "white"}}>Descripcion de la home</p>
       
     </React.Fragment>
   );

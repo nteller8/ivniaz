@@ -1,12 +1,11 @@
 import React from "react";
-import Header from "../../components/Header/Header";
-import Footer from "../../components/Footer/Footer";
+
 
 const Peliculas = () => {
   return (
     <React.Fragment>
     
-      <Peliculas />
+      <h1 style={{color: "white"}}>Peliculas</h1>
       
     </React.Fragment>
   );

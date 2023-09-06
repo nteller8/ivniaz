@@ -1,14 +1,13 @@
 import React from "react";
-import Header from "../../components/Header/Header";
-import Footer from "../../components/Footer/Footer";
+
 
 const AboutUs = () => {
   return (
     <React.Fragment>
-      <Header />
-      <h1>Sobre Nosotros</h1>
-      <p>Descripcion sobre nosotros</p>
-      <Footer />
+   
+      <h1 style={{color: "white"}}>Sobre Nosotros</h1>
+      <p style={{color: "white"}}>Descripcion sobre nosotros</p>
+  
     </React.Fragment>
   );
 };

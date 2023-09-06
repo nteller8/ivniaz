@@ -1,10 +1,14 @@
-import React, { Component } from "react";
+import React from "react";
 
 import "./Header.css";
+import { Link } from "react-router-dom";
 
 
 function Header () {
   return (
+    <React.Fragment>
+   
+    
   <header className="Header">
     <section class="header">
             <article>
@@ -13,9 +17,9 @@ function Header () {
                 </a>
             </article>   
             <article class="barranav">
-                <a href="./index.html"> HOME </a>
-                <a href="./genres.html"> GÉNEROS </a>
-                <a href="./favoritos.html"> FAVORITOS </a>   
+                <Link to='/'> HOME  </Link>
+                <Link to='/genres'> GÉNEROS  </Link>
+                <Link to="/favorites"> FAVORITOS </Link> 
             </article>
             <article class="cuadrado"><h2><i class="fa-solid fa-bars"></i></h2></article>
             <article>
@@ -25,6 +29,7 @@ function Header () {
       
         
         </header>
+        </React.Fragment>
 )
 }
 export default Header;
