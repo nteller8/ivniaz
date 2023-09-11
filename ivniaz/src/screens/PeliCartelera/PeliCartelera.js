@@ -1,6 +1,6 @@
 import React from "react";
 
-function Genres() {
+function PeliCartelera() {
   return (//CORREGIRRRRRR
     <React.Fragment>
       
@@ -11,4 +11,4 @@ function Genres() {
   );
 }
 
-export default Genres;
+export default PeliCartelera;
