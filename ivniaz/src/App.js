@@ -9,7 +9,7 @@ import Peliculas from './screens/Peliculas/Peliculas';
 import UnaPelicula from './screens/UnaPelicula/UnaPelicula';
 import Series from './screens/Series/Series';
 import UnaSerie from './screens/UnaSerie/UnaSerie'; //es necesario?
-import Genres from './screens/Genres/Genres'; //es necesario??
+import PeliCartelera from './screens/PeliCartelera/PeliCartelera'; 
 import SearchResults from './components/SearchResults/SearchResults'
 import {Route, Switch} from 'react-router-dom';
 
@@ -26,7 +26,7 @@ function App() {
         <Route path="/series" exact={true} component={Series}/>
         <Route path="/series/:id"  component={UnaSerie}/>
         <Route path="/favorites" component={Favorites}/> 
-        <Route path="/genres" component={Genres}/> 
+        <Route path="/pelicartelera" component={PeliCartelera}/> 
         <Route path="/searchresults/:searchresults" component={SearchResults}/>
        <Route path="*" component={NoEncontrada}/>
       </Switch>

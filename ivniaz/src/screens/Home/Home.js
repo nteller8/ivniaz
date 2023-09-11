@@ -1,9 +1,14 @@
 import React from "react";
 import { Component } from "react";
-import {Link} from 'react-router-dom/cjs/react-router-dom.min'
+import Buscador from '../../components/Buscador/Buscador'
 import Peliculas from "../../components/Peliculas/Peliculas"
-import Header from "../../components/Header/Header";
-import Footer from '../../components/Footer/Footer'
+import PeliCartelera from '../../components/PeliCartelera/PeliCartelera'
+import { Link } from 'react-router-dom/cjs/react-router-dom.min'
+import '../../../public/css/styles'
+
+
+//import Header from "../../components/Header/Header";
+//import Footer from '../../components/Footer/Footer'
 
 
 
@@ -13,66 +18,61 @@ class Home extends Component {
     this.state = {
       pelispopulares: [],
       pelisencartel: [],
-  };
-}
+    };
+  }
 
   componentDidMount() {
-    //BUscamos datos
-    fetch(
-      `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc`
-    ) //chequear si esta bien la api
+    fetch('https://api.themoviedb.org/3/movie/popular?api_key=400f43d154bc968e0f7c02f3b9187c48&language=en-US&page=1')
       .then((res) => res.json())
       .then((data) =>
         this.setState({
-          pelisencartel: data,
+          pelispopulares: data.results,
+        }))
+      .catch(function (error) {
+        console.log('el error fue: ' + error);
+      });
+
+    //nuevos lanzamientos
+    fetch('https://api.themoviedb.org/3/movie/top_ratedapi_key=400f43d154bc968e0f7c02f3b9187c48&language=en-US&page=1')
+      .then((res) => res.json())
+      .then((data) =>
+        this.setState({
+          pelisencartel: data.results,
         })
       )
-      .catch();
+      .catch(function (error) {
+        console.log('el error fue: ' + error);
+      })
 
-      fetch(
-        `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_release_type=2|3&release_date.gte={min_date}&release_date.lte={max_date}'`
-      ) //chequear si esta bien la api
-        .then((res) => res.json())
-        .then((data) =>
-          this.setState({
-            pelispopulares: data,
-          })
-        )
-        .catch();
-      
   }
-  
+
   render() {
     return (
-      
       <React.Fragment>
+        {
 
-        <article className="peliculas_populares">
-          <h3>{this.props.datosPelicula.title}</h3>
-          <Link to={`/peliculas/${this.props.datosPelicula.id}`}> {/* chequear si no faltan : */}
-            <img className="imagenPP" src={`https://image.tmdb.org/t/p/w500/${this.props.datosPelicula.poster_path}`} alt="imagenPelicula" />
-          </Link>
+          this.state.pelispopulares.length !== 0 ?
+            <section className="container">
+              {/* scroll!!! */}
+              <article className="peliculas_populares">
+                <h2 className='titulo'>Peliculas Populares</h2>
+                <div className='peliculas_populares'>
+                  {this.state.pelispopulares.slice(0, 6).map((pelicula, idx) => <Pelis key={Peliculas + idx} datosPelicula={pelicula} />)}
+                </div>
+              </article>
+            </section> :
+  
+  
 
-          <Link to={`/peliculas/${this.props.datosPelicula.id}`}>
+          this.state.pelisencartel.length > 0 ?
+            <section className="peliculas_toprated">
+              <h2 className='titulo'>Peliculas en Cartelera</h2>
+              <div className='peliculas_toprated'>
+                {this.state.pelispopulares.slice(0, 6).map((pelicula, idx) => <PeliCartelera key={peliculatr + idx} datostr={PeliCartelera} />)}
+              </div>  
+            </section>:}
+    </React.Fragment>)
+  }}
 
-            <p className="UnaPelicula">
-              Ver más
-            </p>
-          </Link>
-          <p className="UnaPelicula" onClick={() => this.props.borrar(this.props.datosPelicula.id)}>
-            Borrar
-          </p> {/* chequear q onda esto */}
-
-
-          <button className="UnaPelicula" onClick={() => this.add_remove_favs(this.props.datosPelicula.id)}>
-            {this.state.textoFavoritos}
-          </button>
-        </article>
-
-
-      </React.Fragment>
-    );
-  }
-}
 
 export default Home;
