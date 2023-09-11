@@ -22,16 +22,11 @@ function App() {
         <Route path="/aboutus"  component={AboutUs}/>
         <Route path="/peliculas" exact={true} component={Peliculas}/>
         <Route path="/peliculas/:id"  component={UnaPelicula}/>
-        <Route path="/series" exact={true} component={Series}/>
-        <Route path="/series/:id"  component={UnaSerie}/>
         <Route path="/favorites" component={Favorites}/> 
-        <Route path="/pelicartelera" component={PeliCartelera}/> 
+        <Route path="/pelicartelera" exact={true} component={PeliCartelera}/> 
         <Route path="/searchresults/:searchresults" component={SearchResults}/>
        <Route path="*" component={NoEncontrada}/>
       </Switch>
-    
-      
-     
       <Footer/>
   
     </React.Fragment>

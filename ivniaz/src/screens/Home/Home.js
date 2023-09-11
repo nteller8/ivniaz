@@ -2,9 +2,9 @@ import React from "react";
 import { Component } from "react";
 import Buscador from '../../components/Buscador/Buscador'
 import Peliculas from "../../components/Peliculas/Peliculas"
-import PeliCartelera from '../../components/PeliCartelera/PeliCartelera'
+import PeliCartelera from '../../screens/PeliCartelera/PeliCartelera'
 import { Link } from 'react-router-dom/cjs/react-router-dom.min'
-import '../../public/css/styles'
+
 
 
 //import Header from "../../components/Header/Header";

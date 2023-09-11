@@ -5,7 +5,7 @@ function PeliCartelera() {
     <React.Fragment>
       
   
-      <p style={{color: "white"}}>Generos</p> 
+      <p style={{color: "white"}}>Ver tendencia</p> 
       
     </React.Fragment>
   );
