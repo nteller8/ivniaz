@@ -7,7 +7,7 @@ class Peliculas extends Component {
     super(props)
     this.state={
       view:false,
-      texto_boton: "Agregar a favoritos"
+      textoFavoritos: "Agregar a favoritos"
     }
   }
 
@@ -21,9 +21,9 @@ class Peliculas extends Component {
     if (recuperoStorage !== null) {
         let favoritos = JSON.parse (recuperoStorage);
 
-        if (favoritos.includes (this.props.datosPeli.id)){
+        if (favoritos.includes (this.props.datosPelicula.id)){
             this.setState ({
-                texto_boton: "Quitar de favoritos"
+                textoFavoritos: "Quitar de favoritos"
             })
           }}}
     
@@ -38,13 +38,13 @@ class Peliculas extends Component {
       if (favoritos.includes (id)){ 
           favoritos = favoritos.filter (peli_id => peli_id !== id )
           this.setState ({
-              texto_boton: "Agregar a favoritos"
+              textoFavoritos: "Agregar a favoritos"
           })
 
        } else {
           favoritos.push (id);
           this.setState ({
-              texto_boton: "Quitar de favoritos",
+              textoFavoritos: "Quitar de favoritos",
           })
        }
 
@@ -55,20 +55,21 @@ class Peliculas extends Component {
   
   }
 
+  //cambiar las clases segun el css!!!!
   render(){
     return(
     <div className = "pelicula"> 
-    <img src={`https://image.tmdb.org/t/p/w500${this.props.datosPeli.poster_path}`} alt="pelis"/>
-    <h4 className="titulos-peliculas">{this.props.datosPeli.title}</h4>
-            <button onClick={()=> this.add_remove_favs(this.props.datosPeli.id)} type="button"> {this.state.texto_boton} </button>
-    <p className="fechas">{this.props.datosPeli.release_date}</p>
+    <img src={`https://image.tmdb.org/t/p/w500${this.props.datosPelicula.poster_path}`} alt="pelis"/>
+    <h4 className="titulos-peliculas">{this.props.datosPelicula.title}</h4>
+            <button onClick={()=> this.add_remove_favs(this.props.datosPelicula.id)} type="button"> {this.state.textoFavoritos} </button>
+    <p className="fechas">{this.props.datosPelicula.release_date}</p>
             <button onClick={this.mostrar} type="button">
             <p className="fechas">Ver más</p>
             </button>
             {this.state.view && (
-            <p className="fechas">{this.props.datosPeli.overview}</p>
+            <p className="fechas">{this.props.datosPelicula.overview}</p>
             )} 
-            <Link to={`/peliculas/${this.props.datosPeli.id}`} className="detail">Ver detalle de pelicula</Link>
+            <Link to={`/peliculas/${this.props.datosPelicula.id}`} className="detail">Ver detalle de pelicula</Link>
     </div>
     )
 }

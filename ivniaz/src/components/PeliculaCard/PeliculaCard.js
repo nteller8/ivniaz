@@ -11,82 +11,63 @@ class PeliculaCard extends Component {
   }
 
   componentDidMount() {
-    let peliculasTraidas = localStorage.getItem(""); //COMPLETAR (aca decia personaje)
-    if (peliculasTraidas === null) {
+    let recuperoStorage = localStorage.getItem("favoritos"); 
+    if (recuperoStorage === null) {
       this.setState({
-        textoFavoritos: "Agregar a favoritos",
+        textoFavoritos: "Agregar a favoritos",  //chequear esto
       });
-    } else if (peliculasTraidas.includes(this.props.datosPelicula.id)) {
+    } else if (recuperoStorage.includes(this.props.datosPelicula.id)) {
       this.setState({
         textoFavoritos: "Quitar de favoritos",
       });
     }
   }
 
-  agregarQuitarFavoritos() {
-    let arrayPeliculas = [this.props.datosPelicula.id];
-    let peliculasTraidas = localStorage.getItem(""); //completar
-    let peliculasFinales = "";
-
-    if (peliculasTraidas === null) {
-        peliculasTraidas = [];
-      peliculasFinales = JSON.stringify(arrayPeliculas);
+  add_remove_favs(id) {
+    let arrayPeliculasFav = [];
+    let recuperoStorage = localStorage.getItem("favoritos"); 
+    
+    if (recuperoStorage !== null) {
+        arrayPeliculasFav = JSON.parse(recuperoStorage);
+      
+    if (recuperoStorage.includes(id)) { //chequear si no es solo id
+      arrayPeliculasFav = arrayPeliculasFav.filter(peli_id => peli_id !== id)
       this.setState({
+        textoFavoritos: "Agregar de favoritos",
+      });
+    }
+
+    else {
+      arrayPeliculasFav.push (id);
+      this.setState ({
         textoFavoritos: "Quitar de favoritos",
       });
     }
 
-    let arrayPeliculasFinales = "";
+    let stringDeFavoritos = JSON.stringify(arrayPeliculasFav);
+    localStorage.setItem("favoritos", stringDeFavoritos );
 
-    if (peliculasTraidas.length !== 0) {
-      let arraypeliculasTraidas = JSON.parse(peliculasTraidas);
-      arrayPeliculasFinales = arraypeliculasTraidas.concat(arrayPeliculas);
-      peliculasFinales = JSON.stringify(arrayPeliculasFinales);
-      this.setState({
-        textoFavoritos: "Quitar de favoritos",
-      });
-    }
-
-    if (peliculasTraidas.includes(this.props.datosPelicula.id)) {
-      let arraypeliculasTraidas = JSON.parse(peliculasTraidas);
-      arrayPeliculasFinales = arraypeliculasTraidas.filter(
-        (item) => item !== this.props.datosPelicula.id
-      );
-      peliculasFinales = JSON.stringify(arrayPeliculasFinales);
-      this.setState({
-        textoFavoritos: "Agregar a favoritos",
-      });
-    }
-
-    localStorage.setItem("pelicula", peliculasFinales);
   }
 
+  
   render() {
     return (
-      <article className="character-card">
-        <Link to={`/peliculas/${this.props.datosPelicula.id}`}>
-          <img src={this.props.datosPelicula.image} alt="" />
-        </Link>
-        <h2>{this.props.datosPelicula.name}</h2>
-        {/* Nombre */}
-        <p>{this.props.datosPelicula.status}</p> {/* Estado */}
-        <p>{this.props.datosPelicula.species}</p> {/* Especie */} //cambiar ESPECIE!!!
-        <p className="more">Ver más</p>
-        <section className="extra">
-          <p>Origen: {this.props.datosPelicula.origin.name}</p>
-        </section>
-        <p
-          className="delete"
-          onClick={() => this.props.borrar(this.props.datosPelicula.id)}
-        >
-          Borrar
-        </p>
-        <button onClick={() => this.agregarQuitarFavoritos()}>
-          {this.state.textoFavoritos}
-        </button>
-      </article>
-    );
+      <React.Fragment>
+          <h2 class = "titulo_ppl">Peliculas populares</h2>
+
+          <section class="peliculas_populares"></section>
+
+
+
+          <h2 class = "titulo_ppl"> Series populares</h2>
+          <section class = "series_populares" ></section>
+
+
+
+
+</React.Fragment>
+    )
+  
   }
-}
 
 export default PeliculaCard;
