@@ -27,7 +27,7 @@ function App() {
         <Route path="/series/:id"  component={UnaSerie}/>
         <Route path="/favorites" component={Favorites}/> 
         <Route path="/genres" component={Genres}/> 
-        <Route path="/searchresults" component={SearchResults}/>
+        <Route path="/searchresults/:searchresults" component={SearchResults}/>
        <Route path="*" component={NoEncontrada}/>
       </Switch>
     

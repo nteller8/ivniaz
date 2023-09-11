@@ -1,12 +1,13 @@
 import React from "react";
-
 import "./Header.css";
 import { Link } from "react-router-dom";
+import Buscador from "../Buscador/Buscador";
 
 //meter logo y barra de navegacion
 function Header () {
   return (
     <React.Fragment>
+   
    
     
   <header className="Header">
@@ -27,6 +28,7 @@ function Header () {
             </article>
         </section>
       
+      <Buscador/>
         
         </header>
         </React.Fragment>
