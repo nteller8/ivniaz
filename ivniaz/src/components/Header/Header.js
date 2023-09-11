@@ -9,7 +9,7 @@ function Header () {
     <React.Fragment>
    
    
-    
+    {/* LOGO DEL GRUPO PONER */}
   <header className="Header">
     <section class="header">
             <article>
@@ -19,17 +19,14 @@ function Header () {
             </article>   
             <article class="barranav">
                 <Link to='/'> HOME  </Link>
-                <Link to='/genres'> GÉNEROS  </Link>
+                <Link to='/peliculas'> VER TODAS  </Link>
                 <Link to="/favorites"> FAVORITOS </Link> 
             </article>
             <article class="cuadrado"><h2><i class="fa-solid fa-bars"></i></h2></article>
             <article>
-                
             </article>
+            <Buscador/>
         </section>
-      
-      <Buscador/>
-        
         </header>
         </React.Fragment>
 )
