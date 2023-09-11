@@ -1,7 +1,7 @@
 import React from "react";
 import { Component } from "react";
 import Header from "../../components/Header/Header";
-
+import Footer from '../../components/Footer/Footer'
 
 
 
@@ -38,24 +38,24 @@ class Home extends Component {
         )
         .catch();
       
-  }}
+  }
   
-  render(); {
+  render() {
     return (
       <React.Fragment>
       {/* meter la barra de navegador buscador aca */}
-      <Header/>
+
         {/* aca va el section de peliculas populares */}
-        <h2 class = "titulo_ppl">Peliculas populares</h2>
+        <h2 className = "titulo_ppl">Peliculas populares</h2>
         {/* aca va el section de peliculas en cartelera */}
-        <h2 class = "titulo_ppl">Peliculas en cartelera</h2>
+        <h2 className = "titulo_ppl">Peliculas en cartelera</h2>
 
 
-        <Footer />
+        
 
       </React.Fragment>
     );
   }
+}
 
-
-export default Home
+export default Home;
