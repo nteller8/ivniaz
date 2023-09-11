@@ -4,6 +4,7 @@ import Buscador from '../../components/Buscador/Buscador'
 import Peliculas from "../../components/Peliculas/Peliculas"
 import PeliCartelera from '../../screens/PeliCartelera/PeliCartelera'
 import { Link } from 'react-router-dom/cjs/react-router-dom.min'
+import PeliPopulares from "../../screens/PeliPopulares/PeliPopulares"
 
 
 
