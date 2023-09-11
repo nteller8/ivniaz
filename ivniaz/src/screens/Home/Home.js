@@ -43,8 +43,7 @@ class Home extends Component {
   render() {
     return (
       <React.Fragment>
-      {/* meter la barra de navegador buscador aca */}
-
+     
         {/* aca va el section de peliculas populares */}
         <h2 className = "titulo_ppl">Peliculas populares</h2>
         {/* aca va el section de peliculas en cartelera */}

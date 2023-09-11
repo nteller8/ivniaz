@@ -11,7 +11,10 @@ class Buscador extends Component {
                 results: []
             };
         }
+    compararBusqueda(inputValue) {
 
+    }
+    
     detenerDefault(evento){
         evento.preventDefault()
     }
@@ -25,7 +28,7 @@ class Buscador extends Component {
     guardarInput (evento){
         this.setState(
             {valorInput: evento.target.value},
-            ()=> this.props.filtro(this.state.valorInput)
+            () => this.compararBusqueda(this.state.valorInput)
         );
     }
 
@@ -34,7 +37,7 @@ class Buscador extends Component {
             <React.Fragment>
             <section>
                 <form onSubmit={(evento) => this.detenerSubmit(evento)}>
-                    <input type="text" placeholder="Buscar" onChange={(evento) =>this.guardarInput(evento)} value={this.state.valorInput}/>
+                    <input type="text" placeholder="Buscar" onChange={(evento) => this.guardarInput(evento)} value={this.state.valorInput}/>
                     <Link to = {`/searchresults/${this.state.valorInput}`}>Buscar</Link>
                 </form>
             </section>
