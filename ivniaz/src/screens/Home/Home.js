@@ -40,7 +40,7 @@ class Home extends Component {
       
   }}
   
-  render() {
+  render(); {
     return (
       <React.Fragment>
       {/* meter la barra de navegador buscador aca */}

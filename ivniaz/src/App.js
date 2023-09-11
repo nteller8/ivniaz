@@ -8,8 +8,9 @@ import NoEncontrada from './screens/NoEncontrada/NoEncontrada';
 import Peliculas from './screens/Peliculas/Peliculas';
 import UnaPelicula from './screens/UnaPelicula/UnaPelicula';
 import Series from './screens/Series/Series';
-import UnaSerie from './screens/UnaSerie/UnaSerie';
-import Genres from './screens/Genres/Genres';
+import UnaSerie from './screens/UnaSerie/UnaSerie'; //es necesario?
+import Genres from './screens/Genres/Genres'; //es necesario??
+import SearchResults from './components/SearchResults/SearchResults'
 import {Route, Switch} from 'react-router-dom';
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
         <Route path="/series/:id"  component={UnaSerie}/>
         <Route path="/favorites" component={Favorites}/> 
         <Route path="/genres" component={Genres}/> 
+        <Route path="/searchresults" component={SearchResults}/>
        <Route path="*" component={NoEncontrada}/>
       </Switch>
     
