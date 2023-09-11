@@ -7,10 +7,9 @@ import Home from './screens/Home/Home';
 import NoEncontrada from './screens/NoEncontrada/NoEncontrada';
 import Peliculas from './screens/Peliculas/Peliculas';
 import UnaPelicula from './screens/UnaPelicula/UnaPelicula';
-import Series from './screens/Series/Series';
-import UnaSerie from './screens/UnaSerie/UnaSerie'; //es necesario?
 import PeliCartelera from './screens/PeliCartelera/PeliCartelera'; 
-import SearchResults from './components/SearchResults/SearchResults'
+import SearchResults from './components/SearchResults/SearchResults';
+import Loader from './screens/Loader/Loader';
 import {Route, Switch} from 'react-router-dom';
 
 function App() {

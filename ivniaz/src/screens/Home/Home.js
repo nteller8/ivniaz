@@ -32,6 +32,13 @@ class Home extends Component {
         console.log('el error fue: ' + error);
       });
 
+      //VER TODAS
+      //VER MAS
+
+      
+      //IR A DETALLE
+      //AGREGAR/ QUITAR DE FAV 
+
     //nuevos lanzamientos
     fetch('https://api.themoviedb.org/3/movie/top_ratedapi_key=400f43d154bc968e0f7c02f3b9187c48&language=en-US&page=1')
       .then((res) => res.json())
@@ -50,6 +57,12 @@ class Home extends Component {
 
   render() {
     return (
+<<<<<<< HEAD
+=======
+      <React.Fragment>
+        {
+          this.state.pelispopulares.length !== 0 ?
+>>>>>>> 783ee1c4d106627613ea7561ff9dca1b21a4fc52
             <section className="container">
               <h2 className='titulo'>Peliculas Populares</h2>
               <div className="peliculas_populares">
