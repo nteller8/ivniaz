@@ -68,7 +68,6 @@ class PeliculaCard extends Component {
           <img className='imagenPP' src={this.props.datosPelicula.poster_path} alt="" />
         </Link>
         <h2>{this.props.datosPelicula.title}</h2>{/* Titulo */}
-        {/* FALTA DESCRPCION */}
          <p className="more" onClick={() => this.props.button(this.props.datosPelicula.id)}>Ver más</p> {/* La descrip tiene que empezar oculta */}
         <h2> <Link className="link" to={`/detail/${this.props.datosPelicula.id}`}> Detalle de película</Link> </h2>
         <p className="delete" onClick={() => this.props.borrar(this.props.datosPelicula.id)}>Borrar</p>
@@ -76,7 +75,7 @@ class PeliculaCard extends Component {
           {this.state.textoFavoritos}
         </button>
       </article>
-
+      {/* FALTA VER MAS/VER MENOS */}
       </React.Fragment>
     )
   }
