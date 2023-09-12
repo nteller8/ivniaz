@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-//import "./PeliculaCard.css";
 import { Link } from "react-router-dom";
 
 class PeliculaCard extends Component {
@@ -7,80 +6,76 @@ class PeliculaCard extends Component {
     super(props);
     this.state = {
       textoFavoritos: "Agregar a favoritos",
-     // boton: false, 
     };
   }
 
   componentDidMount() {
-    let favoritos = [];
-    let recuperoStorage = localStorage.getItem("favoritos");
-    if (recuperoStorage === null) {
+    let peliculasTraidas = localStorage.getItem("pelicula");
+    if (peliculasTraidas === null) {
       this.setState({
-        textoFavoritos: "Agregar a favoritos",  //chequear esto
+        textoFavoritos: "Agregar a favoritos",
       });
-    } else if (recuperoStorage.includes(this.props.datosPelicula.id)) {
+    } else if (peliculasTraidas.includes(this.props.datosPelicula.id)) {
       this.setState({
         textoFavoritos: "Quitar de favoritos",
       });
     }
   }
 
-  add_remove_favs(id) {
+  agregarQuitarFavoritos() {
+    let arrayPeliculas = [this.props.datosPelicula.id];
+    let peliculasTraidas = localStorage.getItem("pelicula");
+    let peliculasFinales = "";
 
-    let recuperoStorage = localStorage.getItem("favoritos");
-
-    if (recuperoStorage !== null) {
-      PeliculasFav = JSON.parse(recuperoStorage);
-
-      if (recuperoStorage.includes(id)) { //chequear si no es solo id
-        PeliculasFav = PeliculasFav.filter(peli_id => peli_id !== id)
-        this.setState({
-          textoFavoritos: "Agregar de favoritos",
-        });
-      }
-
-      else {
-        PeliculasFav.push(id);
-        this.setState({
-          textoFavoritos: "Quitar de favoritos",
-        });
-      }
-
-      let stringDeFavoritos = JSON.stringify(PeliculasFav);
-      localStorage.setItem("favoritos", stringDeFavoritos);
-
+    if (peliculasTraidas === null) {
+      peliculasTraidas = [];
+      peliculasFinales = JSON.stringify(arrayPeliculas);
+      this.setState({
+        textoFavoritos: "Quitar de favoritos",
+      });
     }
 
+    let arrayPeliculasFinales = "";
 
+    if (peliculasTraidas.length !== 0) {
+      let arrayPeliculasTraidas = JSON.parse(peliculasTraidas);
+      arrayPeliculasFinales = arrayPeliculasTraidas.concat(arrayPeliculas);
+      peliculasFinales = JSON.stringify(arrayPeliculasFinales);
+      this.setState({
+        textoFavoritos: "Quitar de favoritos",
+      });
+    }
 
+    if (peliculasTraidas.includes(this.props.datosPelicula.id)) {
+      let arrayPeliculasTraidas = JSON.parse(peliculasTraidas);
+      arrayPeliculasFinales = arrayPeliculasTraidas.filter(
+        (item) => item !== this.props.datosPelicula.id
+      );
+      peliculasFinales = JSON.stringify(arrayPeliculasFinales);
+      this.setState({
+        textoFavoritos: "Agregar a favoritos",
+      });
+    }
 
+    localStorage.setItem("pelicula", peliculasFinales);
   }
+
   render() {
     return (
       <React.Fragment>
-
-        <article className="peliculas_populares">
-          <h3>{this.props.datosPelicula.title}</h3>
-          <Link to={`/peliculas/${this.props.datosPelicula.id}`}> {/* chequear si no faltan : */}
-            <img className="imagenPP" src={`https://image.tmdb.org/t/p/w500/${this.props.datosPelicula.poster_path}`} alt="imagenPelicula" />
-          </Link>
-
-          <Link to={`/peliculas/${this.props.datosPelicula.id}`}>
-
-            <p className="UnaPelicula">
-              Ver más
-            </p>
-          </Link>
-          <p className="UnaPelicula" onClick={() => this.props.borrar(this.props.datosPelicula.id)}>
-            Borrar
-          </p> {/* chequear q onda esto */}
-
-
-          <button className="UnaPelicula" onClick={() => this.add_remove_favs(this.props.datosPelicula.id)}>
-            {this.state.textoFavoritos}
-          </button>
-        </article>
-
+        <article className="pelicula-card">
+        <Link to={`/detail/${this.props.datosPelicula.id}`}>
+          <img className='imagenPP' src={this.props.datosPelicula.poster_path} alt="" />
+        </Link>
+        <h2>{this.props.datosPelicula.title}</h2>{/* Titulo */}
+        {/* FALTA DESCRPCION */}
+         <p className="more" onClick={() => this.props.button(this.props.datosPelicula.id)}>Ver más</p> {/* La descrip tiene que empezar oculta */}
+        <h2> <Link className="link" to={`/detail/${this.props.datosPelicula.id}`}> Detalle de película</Link> </h2>
+        <p className="delete" onClick={() => this.props.borrar(this.props.datosPelicula.id)}>Borrar</p>
+        <button onClick={() => this.agregarQuitarFavoritos()}>
+          {this.state.textoFavoritos}
+        </button>
+      </article>
 
       </React.Fragment>
     )
