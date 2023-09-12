@@ -1,14 +1,14 @@
 import React from "react";
 
 
-const Peliculas = () => {
+const VerTodas = () => {
   return (
     <React.Fragment>
     
-      <h1 style={{color: "white"}}>Peliculas</h1>
+      <h1 style={{color: "white"}}> Ver Todas</h1>
       
     </React.Fragment>
   );
 };
 
-export default Peliculas;
+export default VerTodas;

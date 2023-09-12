@@ -5,10 +5,10 @@ import AboutUs from './screens/AboutUs/AboutUs';
 import Favorites from './screens/Favorites/Favorites';
 import Home from './screens/Home/Home';
 import NoEncontrada from './screens/NoEncontrada/NoEncontrada';
-import Peliculas from './screens/Peliculas/Peliculas';
+import Peliculas from './screens/VerTodas/VerTodas';
 import UnaPelicula from './screens/UnaPelicula/UnaPelicula';
 import PeliCartelera from './screens/PeliCartelera/PeliCartelera'; 
-import SearchResults from './components/SearchResults/SearchResults';
+import SearchResults from './screens/SearchResults/SearchResults';
 import Loader from './screens/Loader/Loader';
 import {Route, Switch} from 'react-router-dom';
 
