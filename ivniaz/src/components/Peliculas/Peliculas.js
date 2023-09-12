@@ -1,79 +1,86 @@
 import React from "react";
 import {Component} from 'react';
 import {Link} from "react-router-dom";
-
+import Buscador from "../Buscador/Buscador";
+import PeliculaCard from '../PeliculaCard/PeliculaCard'
 
 class Peliculas extends Component {
   constructor(props){
     super(props)
     this.state={
-      view:false,
-      textoFavoritos: "Agregar a favoritos"
+      peliculas: [],
+      nextUrl: '',
+      peliculasFavoritas: [], 
     }
   }
 
-  mostrar = () => {
-    this.setState({view: !this.state.view});
-  };
+  componentDidMount() {
+    fetch('https://api.themoviedb.org/3/movie/popular?api_key=400f43d154bc968e0f7c02f3b9187c48&language=en-US&page=1')
+      .then((res) => res.json())
+      .then((data) =>
+        this.setState({
+          populares: data.results,
+        }))
+      .catch(function (error) {
+        console.log('el error fue: ' + error);
+      });
 
-  componentDidMount(){
-    let recuperoStorage = localStorage.getItem ("favoritos");
-    
-    if (recuperoStorage !== null) {
-        let favoritos = JSON.parse (recuperoStorage);
+      fetch('https://api.themoviedb.org/3/movie/popular?api_key=400f43d154bc968e0f7c02f3b9187c48&language=en-US&page=1')
+      .then((res) => res.json())
+      .then((data) =>
+        this.setState({
+          encartel: data.results,
+        }))
+      .catch(function (error) {
+        console.log('el error fue: ' + error);
+      });
+    }
 
-        if (favoritos.includes (this.props.datosPelicula.id)){
-            this.setState ({
-                textoFavoritos: "Quitar de favoritos"
-            })
-          }}}
-    
-    add_remove_favs (id){
-      let favoritos = [];
-      let recuperoStorage = localStorage.getItem ("favoritos");
+    //BORRAR
+    borrar(id) {
+      let peliculasFiltradas = this.state.peliculas.filter(
+        (unaPelicula) => unaPelicula.id !== id);
+      this.setState({
+        peliculas: peliculasFiltradas,});
+    }
 
-      if (recuperoStorage !== null) {  
-          favoritos = JSON.parse(recuperoStorage);
-      }
+    //VERMAS EN CLASE LO VIMOS COMO TRAERMAS
+    verMas() {
+      fetch('https://api.themoviedb.org/3/movie/popular?api_key=400f43d154bc968e0f7c02f3b9187c48&language=en-US&page=1')
+      .then((res) => res.json())
+      .then(data => this.setState({
+        populares: data.results.concat(this.state.populares),
+        peliculasFiltradas: data.results.concat(this.state.peliculasFiltradas)
+      }))
+    }
 
-      if (favoritos.includes (id)){ 
-          favoritos = favoritos.filter (peli_id => peli_id !== id )
-          this.setState ({
-              textoFavoritos: "Agregar a favoritos"
-          })
+    filtrarPeliculas(textoInput){
+      let peliculasFiltradas = this.state.peliculas.filter((pelicula)=> {
+        return pelicula.name.toLowerCase().includes(textoInput.toLowerCase());
+      });
+      this.setState({
+        peliculas: peliculasFiltradas
+      })
+    }
 
-       } else {
-          favoritos.push (id);
-          this.setState ({
-              textoFavoritos: "Quitar de favoritos",
-          })
-       }
-
-
-      let favoritostoString= JSON.stringify(favoritos);
-      localStorage.setItem ("favoritos", favoritostoString);
-      
-  
-  }
-
-  //cambiar las clases segun el css!!!!
-  render(){
+   render(){
     return(
-    <div className = "pelicula"> 
-    <img src={`https://image.tmdb.org/t/p/w500${this.props.datosPelicula.poster_path}`} alt="pelis"/>
-    <h4 className="titulos-peliculas">{this.props.datosPelicula.title}</h4>
-            <button onClick={()=> this.add_remove_favs(this.props.datosPelicula.id)} type="button"> {this.state.textoFavoritos} </button>
-    <p className="fechas">{this.props.datosPelicula.release_date}</p>
-            <button onClick={this.mostrar} type="button">
-            <p className="fechas">Ver más</p>
-            </button>
-            {this.state.view && (
-            <p className="fechas">{this.props.datosPelicula.overview}</p>
-            )} 
-            <Link to={`/peliculas/${this.props.datosPelicula.id}`} className="detail">Ver detalle de pelicula</Link>
-    </div>
-    )
-}
-}
-
-export default Peliculas;
+      <React.Fragment>
+        <Buscador filtro={(texto) => this.filtrarPeliculas(texto)}/>
+        <h2 className="Titulo"> Películas Populares </h2>
+        <button onClick={() => this.verMas()}> Ver más películas populares</button>
+        <section className="card-container">
+          {this.state.peliculas.map((unaPelicula, idx) => <PeliculaCard 
+          key={unaPelicula + idx} 
+          datosPelicula={unaPelicula} 
+          borrar={(id) => this.borrar(id)}
+          verMas={(id) => this.verMas(id)}
+          //ver todas ?
+          />)}
+          </section> 
+      </React.Fragment>
+      
+    )}
+  }
+   
+   export default Peliculas;

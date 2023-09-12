@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./PeliculaCard.css";
+//import "./PeliculaCard.css";
 import { Link } from "react-router-dom";
 
 class PeliculaCard extends Component {
@@ -7,10 +7,12 @@ class PeliculaCard extends Component {
     super(props);
     this.state = {
       textoFavoritos: "Agregar a favoritos",
+     // boton: false, 
     };
   }
 
   componentDidMount() {
+    let favoritos = [];
     let recuperoStorage = localStorage.getItem("favoritos");
     if (recuperoStorage === null) {
       this.setState({
@@ -24,27 +26,27 @@ class PeliculaCard extends Component {
   }
 
   add_remove_favs(id) {
-    let arrayPeliculasFav = [];
+
     let recuperoStorage = localStorage.getItem("favoritos");
 
     if (recuperoStorage !== null) {
-      arrayPeliculasFav = JSON.parse(recuperoStorage);
+      PeliculasFav = JSON.parse(recuperoStorage);
 
       if (recuperoStorage.includes(id)) { //chequear si no es solo id
-        arrayPeliculasFav = arrayPeliculasFav.filter(peli_id => peli_id !== id)
+        PeliculasFav = PeliculasFav.filter(peli_id => peli_id !== id)
         this.setState({
           textoFavoritos: "Agregar de favoritos",
         });
       }
 
       else {
-        arrayPeliculasFav.push(id);
+        PeliculasFav.push(id);
         this.setState({
           textoFavoritos: "Quitar de favoritos",
         });
       }
 
-      let stringDeFavoritos = JSON.stringify(arrayPeliculasFav);
+      let stringDeFavoritos = JSON.stringify(PeliculasFav);
       localStorage.setItem("favoritos", stringDeFavoritos);
 
     }
