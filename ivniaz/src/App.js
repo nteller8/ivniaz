@@ -6,7 +6,7 @@ import Favorites from './screens/Favorites/Favorites';
 import Home from './screens/Home/Home';
 import NoEncontrada from './screens/NoEncontrada/NoEncontrada';
 import Peliculas from './screens/VerTodas/VerTodas';
-import UnaPelicula from './screens/UnaPelicula/UnaPelicula';
+
 import PeliCartelera from './screens/PeliCartelera/PeliCartelera'; 
 import SearchResults from './screens/SearchResults/SearchResults';
 import Loader from './screens/Loader/Loader';
@@ -21,7 +21,6 @@ function App() {
         <Route path="/" exact={true} component={Home}/>
         <Route path="/aboutus"  component={AboutUs}/>
         <Route path="/peliculas" exact={true} component={Peliculas}/>
-        <Route path="/peliculas/:id"  component={UnaPelicula}/>
         <Route path="/favorites" component={Favorites}/> 
         <Route path="/pelicartelera" exact={true} component={PeliCartelera}/> 
         <Route path="/searchresults/:searchresults" component={SearchResults}/>
