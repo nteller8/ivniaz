@@ -66,7 +66,6 @@ class Peliculas extends Component {
    render(){
     return(
       <React.Fragment>
-        <Buscador filtro={(texto) => this.filtrarPeliculas(texto)}/>
         <h2 className="Titulo"> Películas Populares </h2>
         <button onClick={() => this.verMas()}> Ver más películas populares</button>
         <section className="card-container">

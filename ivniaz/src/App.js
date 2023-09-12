@@ -11,6 +11,7 @@ import SearchResults from './screens/SearchResults/SearchResults';
 import Loader from './screens/Loader/Loader';
 import {Route, Switch} from 'react-router-dom';
 
+
 function App() {
   return (
     <React.Fragment>

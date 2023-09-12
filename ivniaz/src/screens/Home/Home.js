@@ -1,6 +1,5 @@
 import React from "react";
 import { Component } from "react";
-//import css from 'ivniaz/public/css/styles'
 import Buscador from '../../components/Buscador/Buscador';
 import Peliculas from "../../components/Peliculas/Peliculas";
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
@@ -40,7 +39,7 @@ class Home extends Component {
       //AGREGAR/ QUITAR DE FAV 
 
     //nuevos lanzamientos
-    fetch('https://api.themoviedb.org/3/movie/top_ratedapi_key=400f43d154bc968e0f7c02f3b9187c48&language=en-US&page=1')
+    fetch('https://api.themoviedb.org/3/movie/top_rated?api_key=400f43d154bc968e0f7c02f3b9187c48&language=en-US&page=1')
       .then((res) => res.json())
       .then((data) =>
         this.setState({
