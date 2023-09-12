@@ -6,6 +6,7 @@ class PeliculaCard extends Component {
     super(props);
     this.state = {
       textoFavoritos: "Agregar a favoritos",
+      textoDescripcion: "Ver Descripción",
     };
   }
 
@@ -60,21 +61,42 @@ class PeliculaCard extends Component {
     localStorage.setItem("pelicula", peliculasFinales);
   }
 
+  VerDescripcion(){
+    if(this.state.description === false){
+        this.setState({
+            description:true,
+            textoDescripcion:"Ocultar descripción"
+        })
+    }
+    else{
+        this.setState({
+            botondescripcion:false,
+            textoDescripcion:"Ver descripción"
+        })
+    }
+}
+
   render() {
     return (
       <React.Fragment>
-        <article className="pelicula-card">
-        <Link to={`/detail/${this.props.datosPelicula.id}`}>
-          <img className='imagenPP' src={this.props.datosPelicula.poster_path} alt="" />
-        </Link>
-        <h2>{this.props.datosPelicula.title}</h2>{/* Titulo */}
+        <section className="peliculas_populares">
+        <Link to={`/detail/${this.props.datosPelicula.id}`}></Link>
+          <article className="pelicula">
+       <img className="imagenPP" src={`https://image.tmdb.org/t/p/w500/${this.props.datosPelicula.poster_path}`} alt="imagenPelicula" />
+        {this.state.botondescripcion ?
+                  <section>
+                    <p className="detalle_pelicula"> Descripción: {this.props.datosPelicula.overview}</p>
+                  </section>
+              : false}
+       
+        <p className="titulo">{this.props.datosPelicula.title}</p>{/* Titulo */}
          <p className="more" onClick={() => this.props.button(this.props.datosPelicula.id)}>Ver más</p> {/* La descrip tiene que empezar oculta */}
         <h2> <Link className="link" to={`/detail/${this.props.datosPelicula.id}`}> Detalle de película</Link> </h2>
         <p className="delete" onClick={() => this.props.borrar(this.props.datosPelicula.id)}>Borrar</p>
         <button onClick={() => this.agregarQuitarFavoritos()}>
           {this.state.textoFavoritos}
-        </button>
-      </article>
+        </button></article> 
+      </section>
       {/* FALTA VER MAS/VER MENOS */}
       </React.Fragment>
     )

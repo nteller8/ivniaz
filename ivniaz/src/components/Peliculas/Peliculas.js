@@ -1,15 +1,14 @@
 import React from "react";
 import {Component} from 'react';
 import {Link} from "react-router-dom";
-import Buscador from "../Buscador/Buscador";
 import PeliculaCard from '../PeliculaCard/PeliculaCard'
+
 
 class Peliculas extends Component {
   constructor(props){
     super(props)
     this.state={
       peliculas: [],
-      nextUrl: '',
       peliculasFavoritas: [], 
     }
   }
@@ -19,7 +18,7 @@ class Peliculas extends Component {
       .then((res) => res.json())
       .then((data) =>
         this.setState({
-          populares: data.results,
+          peliculas: data.results,
         }))
       .catch(function (error) {
         console.log('el error fue: ' + error);
@@ -49,7 +48,7 @@ class Peliculas extends Component {
       fetch('https://api.themoviedb.org/3/movie/popular?api_key=400f43d154bc968e0f7c02f3b9187c48&language=en-US&page=1')
       .then((res) => res.json())
       .then(data => this.setState({
-        populares: data.results.concat(this.state.populares),
+        peliculas: data.results.concat(this.state.populares),
         peliculasFiltradas: data.results.concat(this.state.peliculasFiltradas)
       }))
     }
@@ -66,20 +65,26 @@ class Peliculas extends Component {
    render(){
     return(
       <React.Fragment>
-        <h2 className="Titulo"> Películas Populares </h2>
-        <button onClick={() => this.verMas()}> Ver más películas populares</button>
-        <section className="card-container">
-          {this.state.peliculas.map((unaPelicula, idx) => <PeliculaCard 
-          key={unaPelicula + idx} 
+        
+        <button onClick={() => this.verMas()} className='titulo'> Ver más películas populares</button>
+        <section className="peliculas_populares">
+          {this.state.peliculas.map((unaPelicula, idx) => {
+          
+          if (idx< 5) {
+            return(
+            <PeliculaCard 
+          key={unaPelicula.title + idx} 
           datosPelicula={unaPelicula} 
           borrar={(id) => this.borrar(id)}
           verMas={(id) => this.verMas(id)}
-          //ver todas ?
-          />)}
+          />)
+        } else {return (null)}
+      })}
           </section> 
       </React.Fragment>
-      
+          
     )}
-  }
+    }
+  
    
    export default Peliculas;
