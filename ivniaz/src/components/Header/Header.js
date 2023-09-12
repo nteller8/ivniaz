@@ -1,7 +1,7 @@
 import React from "react";
-import "./Header.css";
 import { Link } from "react-router-dom";
 import Buscador from "../Buscador/Buscador";
+import "./Header.css"
 
 //meter logo y barra de navegacion
 function Header () {
@@ -10,12 +10,11 @@ function Header () {
    
    
     {/* LOGO DEL GRUPO PONER */}
-  <header className="Header">
-    <section class="header">
+  <header className="barranav">
+    <section class="barranav">
             <article>
-                <a  href="./index.html">
-                 
-                </a>
+                
+            <img className= "logo_plat"src="img/logo.png" alt="logo"></img>
             </article>   
             <article class="barranav">
                 <Link to='/'> HOME  </Link>

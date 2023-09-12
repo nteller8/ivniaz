@@ -79,20 +79,20 @@ class PeliculaCard extends Component {
   render() {
     return (
       <React.Fragment>
-        <section className="peliculas_populares">
+        <section className= "recommended_series">
         <Link to={`/detail/${this.props.datosPelicula.id}`}></Link>
-          <article className="pelicula">
-       <img className="imagenPP" src={`https://image.tmdb.org/t/p/w500/${this.props.datosPelicula.poster_path}`} alt="imagenPelicula" />
+          <article className="bloque-portada">
+       <img  className= "portada" src={`https://image.tmdb.org/t/p/w500/${this.props.datosPelicula.poster_path}`} alt="imagenPelicula" />
         {this.state.botondescripcion ?
                   <section>
-                    <p className="detalle_pelicula"> Descripción: {this.props.datosPelicula.overview}</p>
+                    <p className="sinopsis"> Descripción: {this.props.datosPelicula.overview}</p>
                   </section>
               : false}
        
-        <p className="titulo">{this.props.datosPelicula.title}</p>{/* Titulo */}
-         <p className="more" onClick={() => this.props.button(this.props.datosPelicula.id)}>Ver más</p> {/* La descrip tiene que empezar oculta */}
+        <p className="texto-portada">{this.props.datosPelicula.title}</p>{/* Titulo */}
+         <p className="boton" onClick={() => this.props.button(this.props.datosPelicula.id)}>Ver más</p> {/* La descrip tiene que empezar oculta */}
         <h2> <Link className="link" to={`/detail/${this.props.datosPelicula.id}`}> Detalle de película</Link> </h2>
-        <p className="delete" onClick={() => this.props.borrar(this.props.datosPelicula.id)}>Borrar</p>
+        <p className="boton" onClick={() => this.props.borrar(this.props.datosPelicula.id)}>Borrar</p>
         <button onClick={() => this.agregarQuitarFavoritos()}>
           {this.state.textoFavoritos}
         </button></article> 

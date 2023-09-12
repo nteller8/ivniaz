@@ -1,18 +1,16 @@
 /* ALL HTMLS */
 body {
-    box-sizing: border-box;
     background-color: black;
+    box-sizing: border-box;
+
 }
 
-
 /* header*/
-
 .barranav {
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-left: 8px;    
-    font-family: "Montserrat", sans-serif;
+    margin-left: 10px;    
 }
 
 .cuadrado {
@@ -22,10 +20,11 @@ body {
 .barranav a {
     
     color: white;
+    text-align: right;
     padding: 14px 16px;
     text-decoration: none;
     font-size: 20px;
-   
+    justify-content: space-around ;
 }
 
 .barranav a:hover {
@@ -48,9 +47,6 @@ body {
     text-align: center;
 }
 
-.logo_plat{
-    width: 210px;
-}
 
 
 
@@ -107,7 +103,7 @@ body {
     margin-top: 50px;
     color: white;
     font-family: "Montserrat", sans-serif;
-    font-size: 26px;
+    font-size: 20px;
 }
 
 .recommended_series,

@@ -37,8 +37,8 @@ class Buscador extends Component {
             <React.Fragment>
             <section>
                 <form onSubmit={(evento) => this.detenerSubmit(evento)}>
-                    <input type="text" placeholder="Buscar" onChange={(evento) => this.guardarInput(evento)} value={this.state.valorInput}/>
-                    <Link to = {`/searchresults/${this.state.valorInput}`}>Buscar</Link>
+                    <input className= "search" type="text" placeholder="Buscar" onChange={(evento) => this.guardarInput(evento)} value={this.state.valorInput}/>
+                    <Link className= "bottonsearch" to = {`/searchresults/${this.state.valorInput}`}>  <button className="bottonsearch" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>  </Link>
                 </form>
             </section>
             

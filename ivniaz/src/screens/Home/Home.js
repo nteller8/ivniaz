@@ -19,15 +19,17 @@ class Home extends Component {
   render() {
     return (
       <React.Fragment>
-            <section className="container">
-              <h2 className='titulo'>Peliculas Populares</h2>
-              <div className="peliculas_populares">
+            <section className="main-index">
+              <h2 className="titulo">Peliculas Populares</h2>
+         
+                <Peliculas></Peliculas>
+       
+              
+               <h2 className="titulo">Peliculas en Cartelera</h2>
+               
               
                 <Peliculas></Peliculas>
-              </div>
-              
-               <h2 className='titulo'>Peliculas en Cartelera</h2>
-               <Peliculas></Peliculas>
+          
                {/* <div className="peliculas_toprated">
                {this.state.pelispopulares.slice(0, 6).map((pelicula, idx) => <Detail key={pelicula + idx} datostr={Detail} />)}
               </div> */}

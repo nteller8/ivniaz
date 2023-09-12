@@ -1,7 +1,8 @@
 import React from "react";
 import {Component} from 'react';
 import {Link} from "react-router-dom";
-import PeliculaCard from '../PeliculaCard/PeliculaCard'
+import PeliculaCard from '../PeliculaCard/PeliculaCard';
+
 
 
 class Peliculas extends Component {
@@ -66,8 +67,8 @@ class Peliculas extends Component {
     return(
       <React.Fragment>
         
-        <button onClick={() => this.verMas()} className='titulo'> Ver más películas populares</button>
-        <section className="peliculas_populares">
+        <button onClick={() => this.verMas()} className='boton'> Ver más películas populares</button>
+        <section className="recommended_series">
           {this.state.peliculas.map((unaPelicula, idx) => {
           
           if (idx< 5) {
