@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, {Component} from "react";
 import PeliculaCard from "../../components/PeliculaCard/PeliculaCard";
 
 class Favorites extends Component {
@@ -56,7 +56,7 @@ class Favorites extends Component {
     console.log(this.state.pelis);
     return (
       <React.Fragment>
-        
+      
         <section className="main-index">
           <h1 style={{color: "white"}}>Películas favoritas</h1>
           {this.state.pelis.map((unaPeli, idx) => <PeliculaCard key={unaPeli + idx} datosPeli={unaPeli} borrar={(peliFiltro)=> this.borrar(peliFiltro)} />)}
