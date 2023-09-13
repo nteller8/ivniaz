@@ -5,15 +5,16 @@ class Detail extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      peliculas: []
+      peliculasDetalle: []
     }
   }
 
+ 
   componentDidMount() {
     fetch(`https://api.themoviedb.org/3/movie/${this.props.match.params.id}?api_key=400f43d154bc968e0f7c02f3b9187c48`)
       .then(res => res.json())
       .then(data => this.setState({
-        peliculas: data,
+        peliculasDetalle: data,
       }))
       .catch()
 
@@ -23,7 +24,7 @@ class Detail extends Component {
   render() {
     return(
       <React.Fragment>
-        {this.state.peliculas.map((unDetail, idx) => <Detalle key={unDetail + idx} datosDetail = {unDetail}/>)}
+        <Detalle peliculasDetalle={this.state.detallePeli}/>
 
       </React.Fragment>
     )
@@ -31,5 +32,6 @@ class Detail extends Component {
   }
 
 }
+
 
 export default Detail

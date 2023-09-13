@@ -5,63 +5,65 @@ class Detalle extends Component{
     constructor(props){
         super(props)
         this.state={
-           
+           textoFavoritos: "Agregar a Favoritos",
         }
     }
- /*    componentDidMount(){
-        let favoritos = [];
-        let recuperoStorage = localStorage.getItem('favoritos')
-        if(recuperoStorage !== null){
-            let favoritosToArray = JSON.parse(recuperoStorage);
-            favoritos = favoritosToArray
-        }
-        if(favoritos.includes(this.props.datosDetalle.id)){
-            this.setState({
-                textoFavoritos: 'Quitar de favoritos'
-            })
-        }
 
-    }
- */
-   /*  agregarYQuitarDeFavoritos(id){
-        let favoritos = [];
-        let recuperoStorage = localStorage.getItem('favoritos')
-        if(recuperoStorage !== null){
-            let favoritosToArray = JSON.parse(recuperoStorage);
-            favoritos = favoritosToArray
+    componentDidMount(){
+        let recuperoStorage = localStorage.getItem('favoritos');
+        if (recuperoStorage !== null){
+            let favoritos = JSON.parse(recuperoStorage);
+    
+            //si está el id, cambiar el texto del botón
+            if(favoritos.includes(this.props.detallePelicula.id)){
+                this.setState({
+                    textoFavoritos: "Quitar de favoritos"
+                })
+            }
+
         }
-        if(favoritos.includes(id)){ 
-            favoritos = favoritos.filter(unId => unId !== id);
+    }
+
+    agregarYQuitarDeFavoritos(id){
+        let favoritos = [];
+        let recuperoStorage = localStorage.getItem('favoritos');
+        if (recuperoStorage !== null){
+            favoritos = JSON.parse(recuperoStorage);
+        }
+        if(favoritos.includes(id)){
+            favoritos = favoritos.filter( unId => unId !== id)
             this.setState({
-                textoFavoritos: 'Agregar a favoritos'
+                textoFavoritos : "Agregar a favoritos"
             })
         } else {
             favoritos.push(id);
             this.setState({
-                textoFavoritos: 'Quitar de favoritos'
+                textoFavoritos: "Quitar de favoritos",
+                
             })
         }
+        let favoritosToString = JSON.stringify(favoritos);        
+        localStorage.setItem('favoritos', favoritosToString);
 
-        let favoritosToString = JSON.stringify(favoritos);
-        localStorage.setItem('favoritos', favoritosToString); */
+    }
 
     
     render(){
         return(
-           <article className="detalle-card">
-               <h1 className= "titulo1">{this.props.datosDetalle.title}</h1> {/* nombre pelicula */}
-               <img className="imagen-detalle" src={`https://image.tmdb.org/t/p/w342/${this.props.datosDetalle.poster_path}`} alt='img'/> {/* foto de portada */}
-             <section className="info-detalle"> 
-               <h1 className= "titulo2"> Raiting: {this.props.datosDetalle.vote_average}</h1> {/* calificacion */}
-               <h1 className= "titulo2"> Fecha de estreno: {this.props.datosDetalle.release_date}</h1> {/* fecha d estreno */}
-               <h1 className= "titulo2"> Duración: {this.props.datosDetalle.runtime}</h1> {/* foto de portada */}
-               <h1 className= "titulo2"> Género: {this.props.datosDetalle.genres.map(function(genero){return genero.name})}</h1>
-               <p className= "titulo3"> {this.props.datosDetalle.overview}</p>
-               <p className="boton-detalle" onClick={()=>this.agregarYQuitarDeFavoritos(this.props.datosDetalle.id)}>{this.state.textoFavoritos}</p>
-               </section>
+            <React.Fragment>
+           <article className="bloquedetail">
+           <img className="portadadetail" src={`https://image.tmdb.org/t/p/w500${this.props.detallePelicula.poster_path}`}alt='img'/> {/* foto de portada */}
+           <h1 className= "titulospeliculas">{this.props.detallePelicula.title}</h1> {/* nombre pelicula */}
+           <section className="bloquedetail"> 
+            <p className= "fecha-portada"> Raiting: {this.props.detallePelicula.vote_average}</p> {/* raiting */}
+            <p className= "fecha-portada"> Fecha de estreno: {this.props.detallePelicula.release_date}</p> {/* fecha d estreno */}
+            <p className= "fecha-portada"> Duración: {this.props.detallePelicula.runtime}</p> {/* foto de portada */}
+            <p className= "fecha-portada"> Sinopsis: {this.props.detallePelicula.overview}</p>
+            <p className= "fecha-portada"> Género: {this.props.detallePelicula.genres.map(function(genero){return genero.name})}</p>
+            <button className="botonfavoritos" onClick={()=>this.agregarYQuitarDeFavoritos(this.props.detallePelicula.id)}>{this.state.textoFavoritos}</button>
+            </section>
            </article>
-
-
+           </React.Fragment>
         )
     }}
 

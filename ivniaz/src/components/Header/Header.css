@@ -110,11 +110,20 @@ body {
     font-size: 26px;
 }
 
+.verMas {
+    margin-left: 10px;
+    margin-top: 50px;
+    color: white;
+    font-family: "Montserrat", sans-serif;
+    font-size: 15px;
+}
+
 .recommended_series,
 .recommended_movies,
 .top_movies {
     display: flex;
     height: 400px;
+    color: blue;
 }
 
 .section_fav{
