@@ -49,13 +49,13 @@ class Home extends Component {
                 </section>:
                 <h2> Cargando...</h2>
             }
-       
-              
+        </section>
+          <section className="main-index">
                <h2 className="titulo">Peliculas en Cartelera</h2>  {/* DESPUES METEMOS LINK HACIA PELI CARTELERA */}
                
                {this.state.peliculasCart.length >0?
                     <section className="recommended_series">
-                        {this.state.peliculasPop.slice(0, 5).map((unaPelicula, idx) => <PeliculaCard key={unaPelicula + idx} datosPelicula={unaPelicula} />
+                        {this.state.peliculasCart.slice(0, 5).map((unaPelicula, idx) => <PeliculaCard key={unaPelicula + idx} datosPelicula={unaPelicula} />
                         )
                     }
                 </section>:

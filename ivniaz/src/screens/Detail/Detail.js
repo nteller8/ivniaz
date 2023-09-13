@@ -5,7 +5,8 @@ class Detail extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      peliculasDetalle: []
+      peliculasDetalle: [],
+      generosPelicula:[]
     }
   }
 
@@ -15,6 +16,7 @@ class Detail extends Component {
       .then(res => res.json())
       .then(data => this.setState({
         peliculasDetalle: data,
+        generosPelicula: data.genres.map(genre => genre.name)
       }))
       .catch()
 
@@ -24,7 +26,7 @@ class Detail extends Component {
   render() {
     return(
       <React.Fragment>
-        <Detalle peliculasDetalle={this.state.detallePeli}/>
+        <Detalle peliculasDetalle={this.state.peliculasDetalle} generosPelicula={this.state.generosPelicula}/>
 
       </React.Fragment>
     )
