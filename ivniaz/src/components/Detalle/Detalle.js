@@ -43,7 +43,7 @@ class Detalle extends Component{
         }
         let favoritosToString = JSON.stringify(favoritos);        
         localStorage.setItem('favoritos', favoritosToString);
-
+        console.log(favoritos)
     }
 
     

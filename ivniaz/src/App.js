@@ -2,7 +2,7 @@ import React from "react";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import AboutUs from './screens/AboutUs/AboutUs';
-import Favorites from './screens/Favorites/Favorites';
+import Favorites from './components/Favorites/Favorites';
 import Detail from './screens/Detail/Detail'
 import Home from './screens/Home/Home';
 import NoEncontrada from './screens/NoEncontrada/NoEncontrada';
