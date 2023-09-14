@@ -16,7 +16,7 @@ fetch(url)
     
 
     for (let i = 0; i < info.length; i++) {
-      elementosLista += `<article class="cajahijo">
+      elementosLista += `<article className="cajahijo">
                             <a class = "hipervinculo" href="./detail-generes.html?id=${info[i].id}"> ${info[i].name} </a>
                           </article>`
       }
@@ -50,7 +50,7 @@ fetch(url2)
     
 
     for (let i = 0; i < info2.length; i++) {
-      elementosLista2 += `<article class="cajahijo">
+      elementosLista2 += `<article className="cajahijo">
                             <a class = "hipervinculo" href="./detail-generes.html?id=${info2[i].id}"> ${info2[i].name} </a>
                           </article>`
       }

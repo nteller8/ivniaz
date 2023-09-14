@@ -27,19 +27,19 @@ fetch(url)
             for (let i = 0; i < info_api.length; i++) {
                 if (info_api[i].poster_path == null) {
                     elementosLista +=
-                                    ` <article class="pelicula">
+                                    ` <article className="pelicula">
                                             <a class = "hipervinculo" href="./detail-movie.html?id=${info_api[i].id}"> 
-                                            <img class="imagenPP" src="./img/imagen-no-disponible.jpeg" alt=" ">
-                                            <p class= "titulo"> ${info_api[i].original_title} </p>
+                                            <img className="imagenPP" src="./img/imagen-no-disponible.jpeg" alt=" ">
+                                            <p className= "titulo"> ${info_api[i].original_title} </p>
                                             <p class ="estreno"> Estreno: ${info_api[i].release_date}</p>
                                             </a>
                                       </article>`
                 } else {
                     elementosLista +=
-                                    ` <article class="pelicula">
+                                    ` <article className="pelicula">
                                         <a class = "hipervinculo" href="./detail-movie.html?id=${info_api[i].id}"> 
                                         <img class ="imagenPP" src= "https://image.tmdb.org/t/p/w500/${info_api[i].backdrop_path}" alt=''/>
-                                        <p class= "titulo"> ${info_api[i].original_title} </p>
+                                        <p className= "titulo"> ${info_api[i].original_title} </p>
                                         <p class ="estreno"> Estreno: ${info_api[i].release_date}</p>
                                         </a>
                                     </article>`

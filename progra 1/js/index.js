@@ -19,7 +19,7 @@ fetch ('https://api.themoviedb.org/3/movie/popular?api_key=400f43d154bc968e0f7c0
       elementoslista += `<article class = "pelicula">
                           <a class = "hipervinculo" href="./detail-movie.html?id=${info_api[i].id}"> 
                             <img class ="imagenPP" src= "https://image.tmdb.org/t/p/w500/${info_api[i].backdrop_path}" alt=''/>
-                            <p class= "titulo"> ${info_api[i].original_title} </p>
+                            <p className= "titulo"> ${info_api[i].original_title} </p>
                             <p class ="estreno"> Estreno: ${info_api[i].release_date}</p>
                           <a/>
                           </article>`
@@ -51,7 +51,7 @@ fetch ('https://api.themoviedb.org/3/tv/popular?api_key=400f43d154bc968e0f7c02f3
       elementoslista += `<article class = "serie">
                           <a class = "hipervinculo" href="detail-serie.html?id=${info_api[i].id}"> 
                             <img class ="imagenPP" src= "https://image.tmdb.org/t/p/w500/${info_api[i].backdrop_path}" alt=''/>
-                            <p class= "titulo"> ${info_api[i].name} </p>
+                            <p className= "titulo"> ${info_api[i].name} </p>
                             <p class ="estreno"> Estreno: ${info_api[i].first_air_date}</p>
                           <a/>
                           </article>`
@@ -83,7 +83,7 @@ fetch ('https://api.themoviedb.org/3/movie/top_rated?api_key=400f43d154bc968e0f7
       elementoslista += `<article class = "pelicula">
                           <a class = "hipervinculo" href="./detail-movie.html?id=${info_api[i].id}"> 
                             <img class ="imagenPP" src= "https://image.tmdb.org/t/p/w500/${info_api[i].backdrop_path}" alt=''/>
-                            <p class= "titulo"> ${info_api[i].title} </p>
+                            <p className= "titulo"> ${info_api[i].title} </p>
                             <p class ="estreno"> Estreno: ${info_api[i].release_date}</p>
                           <a/>
                           </article>`

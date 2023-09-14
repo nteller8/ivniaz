@@ -49,7 +49,7 @@ fetch(url)
 
         for (let i = 0; i < info.genres.length; i++) {
             generos +=
-                `<p><a class= "hipervinculo" href="./detail-generes.html?id=${info.genres[i].id}&name_G_Movie=${info.genres[i].name}&opcion=movies">${info.genres[i].name}.</a></p>`
+                `<p><a className= "hipervinculo" href="./detail-generes.html?id=${info.genres[i].id}&name_G_Movie=${info.genres[i].name}&opcion=movies">${info.genres[i].name}.</a></p>`
         }
         capturo.innerHTML += generos;
 
@@ -149,9 +149,9 @@ fetch(url2)
               recomendadas +=`<a class = "hipervinculo" href="detail-movie.html?id=${info2[i].id}"> 
                                     <article class = "pelicula">
                                     <img class ="imagenPP" src= "https://image.tmdb.org/t/p/w500/${info2[i].backdrop_path}" alt=''/>
-                                    <p class= "titulo"> ${info2[i].original_title} </p>
+                                    <p className= "titulo"> ${info2[i].original_title} </p>
                                     <p class ="estreno"> Estreno: ${info2[i].release_date}</p>
-                                    <a href ="./detail-movie.html?id=${info2[i].id}" class="detalle"></a>
+                                    <a href ="./detail-movie.html?id=${info2[i].id}" className="detalle"></a>
                                     </article>
                                   <a/>`
             }

@@ -6,7 +6,6 @@ import Favorites from './components/Favorites/Favorites';
 import Detail from './screens/Detail/Detail'
 import Home from './screens/Home/Home';
 import NoEncontrada from './screens/NoEncontrada/NoEncontrada';
-
 import SearchResults from './screens/SearchResults/SearchResults';
 import Loader from './screens/Loader/Loader';
 import Populares from "./components/Populares/Populares";

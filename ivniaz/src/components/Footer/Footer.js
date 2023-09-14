@@ -5,7 +5,7 @@ import "./Footer.css";
 function Footer () {
   return (
   <footer className="Footer">
-   <footer class="footer">
+   <footer className="footer">
     <p>Autores: Ivanka Del Mastro - Nina Teller - Azul Bidner</p>
     
     <p>© 2001-2022 PlayMovie, Inc (d78383-c92736)</p>

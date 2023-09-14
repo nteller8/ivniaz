@@ -136,9 +136,9 @@ fetch(url3)
               recomendadas +=`<a class = "hipervinculo" href="detail-serie.html?id=${info3[i].id2}"> 
                                     <article class = "serie">
                                     <img class ="imagenPP" src= "https://image.tmdb.org/t/p/w500/${info3[i].backdrop_path}" alt=''/>
-                                    <p class= "titulo"> ${info3[i].name} </p>
+                                    <p className= "titulo"> ${info3[i].name} </p>
                                     <p class ="estreno"> Estreno: ${info3[i].first_air_date}</p>
-                                    <a href ="./detail-serie.html?id=${info3[i].id2}" class="detalle"></a>
+                                    <a href ="./detail-serie.html?id=${info3[i].id2}" className="detalle"></a>
                                     </article>
                                   <a/>`
             }

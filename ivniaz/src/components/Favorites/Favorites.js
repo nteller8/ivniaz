@@ -39,7 +39,7 @@ class Favorites extends Component {
       <React.Fragment>
       
 
-        <h2 class="titulo">Tus películas favoritas</h2>
+        <h2 className="titulo">Tus películas favoritas</h2>
                 <section className="main-index">
                     <div className="recommended_movies">
                         {this.state.pelisFavs.map(

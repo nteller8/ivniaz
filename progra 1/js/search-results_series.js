@@ -26,19 +26,19 @@ fetch(url2)
                 console.log(info_api[i]);
                 if (info_api[i].poster_path == null) {
                     elementosLista +=
-                                    ` <article class="pelicula">
+                                    ` <article className="pelicula">
                                             <a class = "hipervinculo" href="./detail-serie.html?id=${info_api[i].id}"> 
-                                            <img class="imagenPP" src="./img/imagen-no-disponible.jpeg" alt=" ">
-                                            <p class= "titulo"> ${info_api[i].original_name} </p>
+                                            <img className="imagenPP" src="./img/imagen-no-disponible.jpeg" alt=" ">
+                                            <p className= "titulo"> ${info_api[i].original_name} </p>
                                             <p class ="estreno"> Estreno: ${info_api[i].first_air_date}</p>
                                             </a>
                                       </article>`
                 } else {
                     elementosLista +=
-                                    ` <article class="pelicula">
+                                    ` <article className="pelicula">
                                         <a class = "hipervinculo" href="./detail-serie.html?id=${info_api[i].id}"> 
                                         <img class ="imagenPP" src= "https://image.tmdb.org/t/p/w500/${info_api[i].backdrop_path}" alt=''/>
-                                        <p class= "titulo"> ${info_api[i].original_name} </p>
+                                        <p className= "titulo"> ${info_api[i].original_name} </p>
                                         <p class ="estreno"> Estreno: ${info_api[i].first_air_date}</p>
                                         
                                         </a>

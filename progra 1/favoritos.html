@@ -15,30 +15,30 @@
     
     <header>
 
-        <section class="header">
+        <section className="header">
             <article>
                 <a  href="./index.html">
                     <img src="./img/logo.png" alt="logo">
                 </a>
             </article>   
-            <article class="barranav">
+            <article className="barranav">
                 <a href="./index.html"> HOME </a>
                 <a href="./genres.html"> GÉNEROS </a>
                 <a href="./favoritos.html"> FAVORITOS </a>   
             </article>
-            <article class="cuadrado"><h2><i class="fa-solid fa-bars"></i></h2></article>
+            <article className="cuadrado"><h2><i className="fa-solid fa-bars"></i></h2></article>
             <article>
-                <form class="busqueda" action="./search-results.html" method="GET">
-                    <input class="opcion" type="radio" name = "media" value = "all" checked>
+                <form className="busqueda" action="./search-results.html" method="GET">
+                    <input className="opcion" type="radio" name = "media" value = "all" checked>
                     <label for="">Todo</label>
-                    <input class="opcion" type="radio" name="media" value="peliculas">
+                    <input className="opcion" type="radio" name="media" value="peliculas">
                     <label for=""> Películas </label> 
-                    <input class="opcion" type="radio" name="media" value="series">
+                    <input className="opcion" type="radio" name="media" value="series">
                     <label for=""> Series </label>
 
-                    <input class= "search" name = "buscador" placeholder = "Buscar" type="text">
-                    <button class="bottonsearch" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>  
-                    <p class="texto-usuario"></p>  
+                    <input className= "search" name = "buscador" placeholder = "Buscar" type="text">
+                    <button className="bottonsearch" type="submit"><i className="fa-solid fa-magnifying-glass"></i></button>  
+                    <p className="texto-usuario"></p>  
                 </form>
             </article>
         </section>
@@ -46,28 +46,28 @@
     </header>
     
     
-<main class="main-favoritos">
-    <section class="seccion-favoritos">
+<main className="main-favoritos">
+    <section className="seccion-favoritos">
         <h1> Mis favoritos </h1>
         <h2> Peliculas favoritas </h2>
-        <article class="favoritos-peliculas">
-        <section class="peliculas_populares"></section>
+        <article className="favoritos-peliculas">
+        <section className="peliculas_populares"></section>
             
         </article>
         
         <h2> Series Favoritas</h2>
-        <article class="favoritos-series">
+        <article className="favoritos-series">
         <section class = "series_populares" ></section>
 
         </article>
-    <!--h1 class="titulocomedia">Favoritos</h1>
+    <!--h1 className="titulocomedia">Favoritos</h1>
     
     <h2 class = "titulo_ppl"> Tus Peliculas Favoritas </h2>
-    <section class="peliculas_populares">
+    <section className="peliculas_populares">
     
-        <article class="pelicula">
+        <article className="pelicula">
             <a class = "hipervinculo" href="./detail_movie.html">
-                <img class="imagenPP" src="img/increibles.jpeg" alt="Top Gun"> 
+                <img className="imagenPP" src="img/increibles.jpeg" alt="Top Gun"> 
                 <p class = 'titulo'> Los increíbles</p>
                 <p class = 'estreno'> 18-02-2013</p> 
             </a>
@@ -75,7 +75,7 @@
         
         <article class = "pelicula">  
             <a class = "hipervinculo" href="./detail_movie.html"> 
-                <img class="imagenPP" src="img/soncomoniños.jpeg" alt=""> 
+                <img className="imagenPP" src="img/soncomoniños.jpeg" alt=""> 
                 <p class = 'titulo'> Son como niños</p>     
                 <p class = 'estreno'> 02-06-2011</p> 
             </a>
@@ -84,7 +84,7 @@
        
     <article class = "pelicula">  
         <a class = "hipervinculo" href="./detail_movie.html"> 
-            <img class="imagenPP" src="img/locura.jpeg" alt=""> 
+            <img className="imagenPP" src="img/locura.jpeg" alt=""> 
             <p class = 'titulo'> Locura de amor en Las Vegas</p>
             <p class = 'estreno'> 21-10-2014</p> 
         </a> 
@@ -94,7 +94,7 @@
        
     <article class = "pelicula">  
         <a class = "hipervinculo" href="./detail_movie.html">
-            <img class="imagenPP" src="img/avengers.jpeg" alt="">
+            <img className="imagenPP" src="img/avengers.jpeg" alt="">
                 <p class = 'titulo'> Avengers: Inifnity War</p>
                 <p class = 'estreno'> 29-04-2019</p> 
         </a> 
@@ -105,11 +105,11 @@
 
 
     <h2 class = "titulo_ppl"> Tus Series Favoritas </h2>
-    <section class="peliculas_populares">
+    <section className="peliculas_populares">
     
-        <article class="pelicula">
+        <article className="pelicula">
             <a class = "hipervinculo" href="./detail_serie.html">
-                <img class="imagenPP" src="img/greys.jpeg" alt="Top Gun"> 
+                <img className="imagenPP" src="img/greys.jpeg" alt="Top Gun"> 
                 <p class = 'titulo'> Greys´s Anatomy</p>
                 <p class = 'estreno'> 01-01-2009</p> 
             </a>
@@ -117,7 +117,7 @@
         
         <article class = "pelicula">  
             <a class = "hipervinculo" href="./detail_serie.html"> 
-                <img class="imagenPP" src="img/gossip.webp" alt=""> 
+                <img className="imagenPP" src="img/gossip.webp" alt=""> 
                 <p class = 'titulo'> Gossip Girl</p>     
                 <p class = 'estreno'> 04-03-2008</p> 
 
@@ -127,9 +127,9 @@
 
 
 </main> 
-<footer class="footer">
+<footer className="footer">
     <p>Autores: Ivanka Del Mastro & Victoria Sassoon</p>
-    <img class="logo_footer" src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_long_1-8ba2ac31f354005783fab473602c34c3f4fd207150182061e425d366e4f34596.svg" alt="">
+    <img className="logo_footer" src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_long_1-8ba2ac31f354005783fab473602c34c3f4fd207150182061e425d366e4f34596.svg" alt="">
     <p>© 2001-2022 PlayMovie, Inc (d78383-c92736)</p>
 </footer>
 

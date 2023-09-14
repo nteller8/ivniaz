@@ -11,17 +11,17 @@ function Header () {
    
     {/* LOGO DEL GRUPO PONER */}
   <header className="barranav">
-    <section class="barranav">
+    <section className="barranav">
             <article>
                 
             <img className= "logo_plat"src="img/logo.png" alt="logo"></img>
             </article>   
-            <article class="barranav">
+            <article className="barranav">
                 <Link to='/'> HOME  </Link>
-                <Link to='/vertodas'> VER TODAS  </Link>
+                <Link to='/todaspopu'> VER TODAS  </Link>
                 <Link to="/favorites"> FAVORITOS </Link> 
             </article>
-            <article class="cuadrado"><h2><i class="fa-solid fa-bars"></i></h2></article>
+            <article className="cuadrado"><h2><i className="fa-solid fa-bars"></i></h2></article>
             <article>
             </article>
             <Buscador/>

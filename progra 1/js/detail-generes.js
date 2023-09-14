@@ -19,19 +19,19 @@ fetch(url)
         for (let i = 0; i < info.length; i++) {
           if (info[i].poster_path == null) {
               elementosPeliculas +=
-                                    `<article class="pelicula">
+                                    `<article className="pelicula">
                                     <a class = "hipervinculo" href="./detail-movie.html?id=${info[i].id}">
                                     <img class = "imagenPP" src="./img/imagen-no-disponible.jpeg" alt="Portada">
-                                    <p class= "titulo"> ${info[i].original_title} </p>
+                                    <p className= "titulo"> ${info[i].original_title} </p>
                                     <p class ="estreno"> Estreno: ${info[i].release_date}</p>
                                     </a>
                                     </article>`
           } else {
               elementosPeliculas +=
-                                  `<article class="pelicula">
+                                  `<article className="pelicula">
                                   <a class = "hipervinculo" href="./detail-movie.html?id=${info[i].id}">
                                   <img class = "imagenPP" src="https://image.tmdb.org/t/p/w500/${info[i].backdrop_path}" alt="Portada">
-                                  <p class= "titulo"> ${info[i].original_title} </p>
+                                  <p className= "titulo"> ${info[i].original_title} </p>
                                   <p class ="estreno"> Estreno: ${info[i].release_date}</p>
                                   </a>
                                   </article>`
@@ -70,19 +70,19 @@ fetch(url2)
         for (let i = 0; i < info2.length; i++) {
           if (info2[i].poster_path == null) {
               elementosSeries +=
-                                    `<article class="serie">
+                                    `<article className="serie">
                                     <a class = "hipervinculo" href="./detail-serie.html?id=${info2[i].id2}">
                                     <img class = "imagenPP" src="./img/imagen-no-disponible.jpeg" alt="Portada">
-                                    <p class= "titulo"> ${info2[i].original_name} </p>
+                                    <p className= "titulo"> ${info2[i].original_name} </p>
                                     <p class ="estreno"> Estreno: ${info2[i].first_air_date}</p>
                                     </a>
                                     </article>`
           } else {
               elementosSeries +=
-                                  `<article class="serie">
+                                  `<article className="serie">
                                   <a class = "hipervinculo" href="./detail-serie.html?id=${info2[i].id2}">
                                   <img class = "imagenPP" src="https://image.tmdb.org/t/p/w500/${info2[i].backdrop_path}" alt="Portada">
-                                  <p class= "titulo"> ${info2[i].original_name} </p>
+                                  <p className= "titulo"> ${info2[i].original_name} </p>
                                   <p class ="estreno"> Estreno: ${info2[i].first_air_date}</p>
                                   </a>
                                   </article>`
