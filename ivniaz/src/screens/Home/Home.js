@@ -45,7 +45,7 @@ class Home extends Component {
               <button className="boton">Ver todas</button> 
             </Link>
               {this.state.peliculasPop.length >0?
-                    <section className="recommended_movies">
+                    <section className="recommended_series">
                         {this.state.peliculasPop.slice(0, 5).map((unaPelicula, idx) => <PeliculaCard key={unaPelicula + idx} datosPelicula={unaPelicula} />
                         )
                     }
@@ -60,7 +60,7 @@ class Home extends Component {
               <button className="boton">Ver todas</button> 
             </Link>
                {this.state.peliculasCart.length >0?
-                    <section className="recommended_series">
+                    <section className="recommended_movies">
                         {this.state.peliculasCart.slice(0, 5).map((unaPelicula, idx) => <PeliculaCard key={unaPelicula + idx} datosPelicula={unaPelicula} />
                         )
                     }

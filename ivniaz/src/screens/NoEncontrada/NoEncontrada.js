@@ -1,6 +1,5 @@
 import React from "react";
 
-// por que pusimos const y no function?
 const NoEncontrada = () => {
   return (
     <React.Fragment>
