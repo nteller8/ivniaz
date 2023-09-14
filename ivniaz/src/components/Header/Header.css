@@ -109,21 +109,46 @@ body {
     font-family: "Montserrat", sans-serif;
     font-size: 26px;
 }
-
-.verMas {
+.titulo2 {
     margin-left: 10px;
-    margin-top: 50px;
+    margin-top: 5px;
     color: white;
     font-family: "Montserrat", sans-serif;
-    font-size: 15px;
+    font-size: 26px;
 }
 
-.recommended_series,
-.recommended_movies,
+ .main-index {
+        height: 600px;
+    }
+
+.verMas {
+    color: white;
+    font-family: "Montserrat", sans-serif;
+    font-size: 12px;
+    border-radius: 5px;
+    border-style:groove;
+    border-color: white;
+    padding: 2%;
+}
+
+
 .top_movies {
     display: flex;
     height: 400px;
     color: blue;
+}
+
+.recommended_series{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.recommended_movies{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    
 }
 
 .section_fav{
@@ -156,7 +181,7 @@ body {
     width: 215px;
     height: 300px;
     margin-top: 20px;
-    margin-left: 25px;
+
 }
 
 .texto-portada {
@@ -178,7 +203,20 @@ body {
 .titulospeliculas {
     text-decoration: none;
     color: white;
+    font-size: 12px;
+    font-family: "Montserrat", sans-serif;
+    text-align: center;
 }
+
+.titulospeliculas2 {
+    text-decoration: none;
+    color: white;
+    font-size: 12px;
+    font-family: "Montserrat", sans-serif;
+    margin-left: 100px;
+}
+
+
 
 span {
     display: inline;
@@ -327,6 +365,7 @@ span {
     .main-index {
         height: 6000px;
     }
+    
 
     .recommended_series,
     .recommended_movies,
@@ -403,23 +442,74 @@ span {
     }
 
     /* DETAIL MOVIES Y SERIES en celular */
-
+    .portadadetail {
+        width: 215px;
+        height: 300px;
+        margin-top: 20px;
+        
+    }
+    
+    .texto-portada {
+        color: white;
+        font-size: 20px;
+        margin: 5px;
+        text-align: center;
+        font-family: "Montserrat", sans-serif;
+    }
+    
+    .fecha-portada {
+        color: grey;
+        font-size: 15px;
+        margin: 5px;
+        text-align: center;
+        font-family: "Montserrat", sans-serif;
+    }
+    
+    .titulospeliculas {
+        text-decoration: none;
+        color: white;
+    }
+    
+    span {
+        display: inline;
+        color: white;
+    }
+    
     .bloquedetail {
-        margin-left: 2px;
         display: flex;
-        flex-direction: column;
-        height: auto;
-        width: 350px;
+        justify-content: right;
+        background-color: rgba(51, 50, 50, 0.54);
+        border-radius: 10px;
+        font-family: "Montserrat", sans-serif;
+        padding: 4%;
+        margin-top: 3cm;
+        margin-left: 230px;
+        color: white;
+        height: 350px;
+        width: 800px;
     }
-
+    
     .bloque-portada {
-        justify-content: center;
+        margin-right: 20px;
     }
-
-    .main-detail-movies {
-        height: 50000 px;
+    
+    .botonfavoritos {
+        color: black;
+        border-radius: 5px;
+        border-style: none;
     }
-
+    
+    .botonfavoritos:hover {
+        color: white;
+        background-color: red;
+    }
+    
+    .flechainicio {
+        text-decoration: none;
+        color: white;
+        font-size: 40px;
+    }
+    
     /* GENRES en el celular */
     .section-genders {
         height: 1000px;

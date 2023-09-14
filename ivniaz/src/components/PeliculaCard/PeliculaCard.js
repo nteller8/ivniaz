@@ -24,8 +24,8 @@ class PeliculaCard extends Component {
           <Link to={`/detail/${this.props.datosPelicula.id}`}><img  className= "portada" src={`https://image.tmdb.org/t/p/w500/${this.props.datosPelicula.poster_path}`} alt="imagenPelicula" /></Link>
         <p className="texto-portada">{this.props.datosPelicula.title}</p>   {/* Titulo */}
         <p className="verMas">{this.state.show ? this.state.descripcion : ''} </p> {/* La descrip empieza oculta */}
-        <p className="bottonsearch" onClick={()=> this.handleshow()}>{this.state.show ? 'Ver menos' : 'Ver más'}</p>
-        <p> <Link className="hipervinculo" to={`/detail/${this.props.datosPelicula.id}`}> Detalle de película</Link> </p>
+        <p className="titulospeliculas" onClick={()=> this.handleshow()}>{this.state.show ? 'Ver menos' : 'Ver más'}</p>
+        <p> <Link className="titulospeliculas2" to={`/detail/${this.props.datosPelicula.id}`}> Ir a detalle </Link> </p>
        </article> 
       </section>
       
