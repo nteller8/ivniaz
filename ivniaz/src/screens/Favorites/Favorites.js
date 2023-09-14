@@ -11,10 +11,11 @@ class Favorites extends Component {
 
   componentDidMount(){
     let favs = []
-    let recuperoStorage = localStorage.getItem('favs')
+    let recuperoStorage = localStorage.getItem('favoritos')
 
         if(recuperoStorage !== null){
-            favs = JSON.parse(recuperoStorage) 
+            favs = JSON.parse(recuperoStorage)
+            console.log(favs)
             let pelisOk = [];
 
             favs.forEach(IdFav => {
@@ -34,7 +35,7 @@ class Favorites extends Component {
 
   borrar(id){
     let favs = [];
-    let recuperoStorage = localStorage.getItem('favs')
+    let recuperoStorage = localStorage.getItem('favoritos')
     if(recuperoStorage !== null){
         let favsToArray = JSON.parse(recuperoStorage);
         favs = favsToArray

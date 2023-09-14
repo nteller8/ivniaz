@@ -7,6 +7,7 @@ class PeliculaCard extends Component {
     this.state={
         show: false,
         descripcion: props.datosPelicula.overview
+        //datosPelicula no está definido, hay que ver de donde viene ¿?
       }
   }
   handleshow(){
