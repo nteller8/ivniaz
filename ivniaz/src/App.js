@@ -9,6 +9,7 @@ import NoEncontrada from './screens/NoEncontrada/NoEncontrada';
 import Peliculas from './screens/VerTodas/VerTodas';
 import SearchResults from "./components/SearchResults.js/SearchResults";
 import Loader from './screens/Loader/Loader';
+import Populares from "./components/Populares/Populares";
 import {Route, Switch} from 'react-router-dom';
 
 
@@ -21,6 +22,7 @@ function App() {
         <Route path="/" exact={true} component={Home}/>
         <Route path="/aboutus"  component={AboutUs}/>
         <Route path="/peliculas" exact={true} component={Peliculas}/>
+        <Route path="/populares" exact={true} component={Populares}/>
         <Route path="/favorites" component={Favorites}/> 
         <Route path="/detail/:id" component={Detail}/>
         <Route path="/searchresults/:abuscar" component={SearchResults}/>
