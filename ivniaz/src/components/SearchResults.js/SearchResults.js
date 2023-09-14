@@ -14,7 +14,7 @@ class SearchResults extends Component {
             .then(res => res.json())
             .then(data => this.setState({
                 peliculaBuscada: data.results,
-            }))
+            }, () => console.log(data.results)))
             .catch(error => console.log(error))
     }
 
@@ -25,7 +25,7 @@ class SearchResults extends Component {
             <div className="recommended_movies">  
             {this.state.peliculaBuscada.length > 0 ?
             <section className="main-index">
-            {this.state.peliculaBuscada.slice(0,12).map((peli,idx) => <PeliculaCard key={peli + idx} datosPeli={peli}/>)} 
+            {this.state.peliculaBuscada.map((peli,idx) => <PeliculaCard key={peli + idx} datosPelicula={peli}/>)} 
             </section>:
             <h3> Loading...</h3> }
             </div>
