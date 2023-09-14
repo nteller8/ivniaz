@@ -18,7 +18,7 @@ function Header () {
             </article>   
             <article class="barranav">
                 <Link to='/'> HOME  </Link>
-                <Link to='/peliculas'> VER TODAS  </Link>
+                <Link to='/vertodas'> VER TODAS  </Link>
                 <Link to="/favorites"> FAVORITOS </Link> 
             </article>
             <article class="cuadrado"><h2><i class="fa-solid fa-bars"></i></h2></article>

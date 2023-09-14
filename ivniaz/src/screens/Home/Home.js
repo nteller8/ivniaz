@@ -55,7 +55,7 @@ class Home extends Component {
         </section>
           <section className="main-index">
                <h2 className="titulo">Peliculas en Cartelera</h2>  {/* DESPUES METEMOS LINK HACIA PELI CARTELERA */}
-               <Link to={`/todascarte`}>
+               <Link to={'/todascarte'}>
             {/* ver todas */}
               <button className="boton">Ver todas</button> 
             </Link>
