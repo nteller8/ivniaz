@@ -8,10 +8,9 @@ import Home from './screens/Home/Home';
 import NoEncontrada from './screens/NoEncontrada/NoEncontrada';
 import SearchResults from './screens/SearchResults/SearchResults';
 import Loader from './screens/Loader/Loader';
-import Populares from "./components/Populares/Populares";
 import { Route, Switch } from 'react-router-dom';
-import TodasCarte from "./screens/TodasCarte/TodasCarte";
-import TodasPopu from "./screens/TodasPopu/TodasPopu";
+import TodasCarte from "./components/TodasCarte/TodasCarte";
+import TodasPopu from "./components/TodasPopu/TodasPopu";
 
 
 function App() {
@@ -22,7 +21,6 @@ function App() {
       <Switch>
         <Route path="/" exact={true} component={Home} />
         <Route path="/aboutus" component={AboutUs} />
-
         <Route path="/favorites" component={Favorites} />
         <Route path="/detail/:id" component={Detail} />
         <Route path="/searchresults/:searchresults" component={SearchResults} />

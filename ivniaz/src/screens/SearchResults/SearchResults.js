@@ -1,8 +1,8 @@
-import React, { Component } from "react";
-import { Link } from 'react-router-dom';
-import Buscador from "../Buscador/Buscador";
+///import React, { Component } from "react";
+///import { Link } from 'react-router-dom';
+//import Buscador from "../Buscador/Buscador";
 
-class SearchResults extends Component {
+{/*class SearchResults extends Component {
   constructor() {
     super();
     this.state = {
@@ -16,3 +16,5 @@ componentDidMount() {
 
 }
 }
+
+{/* DESPUES METEMOS LINK HACIA POPULARES */}
