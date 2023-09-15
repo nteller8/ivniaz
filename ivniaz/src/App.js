@@ -6,7 +6,6 @@ import Detail from './screens/Detail/Detail'
 import Home from './screens/Home/Home';
 import NoEncontrada from './screens/NoEncontrada/NoEncontrada';
 import SearchResults from './components/SearchResults.js/SearchResults';
-import Loader from './screens/Loader/Loader';
 import { Route, Switch } from 'react-router-dom';
 import TodasCarte from "./screens/TodasCarte/TodasCarte";
 import TodasPopu from "./screens/TodasPopu/TodasPopu";

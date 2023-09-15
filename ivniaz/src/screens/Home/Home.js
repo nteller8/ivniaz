@@ -65,7 +65,7 @@ class Home extends Component {
                         )
                     }
                 </section>:
-                <h2> Cargando...</h2>
+                <h2> Loading...</h2>
             }
                 
             </section>

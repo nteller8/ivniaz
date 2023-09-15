@@ -62,7 +62,7 @@ class Favorites extends Component {
           <h1 style={{color: "white"}}>Películas favoritas</h1>
           {this.state.pelis.map((unaPeli, idx) => <PeliculaCard key={unaPeli + idx} datosPeli={unaPeli} borrar={(peliFiltro)=> this.borrar(peliFiltro)} />)}
         </section>
-      
+        <h3 className="loading">Loading...</h3>
       </React.Fragment>
     );
   }

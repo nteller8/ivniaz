@@ -27,7 +27,7 @@ class Detail extends Component {
     return(
       <React.Fragment>
         <Detalle peliculasDetalle={this.state.peliculasDetalle} generosPelicula={this.state.generosPelicula}/>
-
+        <h3 className="loading">Loading...</h3>
       </React.Fragment>
     )
 
