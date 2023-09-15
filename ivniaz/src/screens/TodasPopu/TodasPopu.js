@@ -8,19 +8,20 @@ class TodasPopu extends Component   {
     super(props)
     this.state={
       peliculasPop: [],  //aparecen peliculas populares
-      boton: false,
       page: 1,
+      backup: []
     };
   }
 
   
-  componenDidMount (){
-  fetch('https://api.themoviedb.org/3/movie/popular?api_key=400f43d154bc968e0f7c02f3b9187c48&language=en-US&page=1'+this.state.page)
+  componentDidMount (){
+  fetch(`https://api.themoviedb.org/3/movie/popular?api_key=400f43d154bc968e0f7c02f3b9187c48&language=en-US&page=${this.state.page}`)
   .then((res) => res.json())
   .then((data) =>
     this.setState({
       peliculasPop: data.results,
-      page: this.state.page+1,
+      backup: data.results,
+   
     }))
   .catch(function (error) {
     console.log('el error fue: ' + error);
@@ -29,23 +30,25 @@ class TodasPopu extends Component   {
 
 
   filtrarPeliculas(textoInput) {
-    let peliculasFiltradas = this.state.peliculasPop.filter((datosPelicula) => {
-      return datosPelicula.title.includes(textoInput);
+    let peliculasFiltradas = this.state.backup.filter((datosPelicula) => {
+      return datosPelicula.title.toLowerCase().includes(textoInput.toLowerCase());
     });
     this.setState({
       peliculasPop: peliculasFiltradas,
+      
     });
   }
 
 
   traerMas() {
     //Traer la siguiente página de personajes
-    fetch('https://api.themoviedb.org/3/movie/popular?api_key=400f43d154bc968e0f7c02f3b9187c48&language=en-US&page=1'+this.state.page)
+    fetch(`https://api.themoviedb.org/3/movie/popular?api_key=400f43d154bc968e0f7c02f3b9187c48&language=en-US&page=${this.state.page}`)
       .then((res) => res.json())
       .then((data) =>
         this.setState({
           peliculasPop: this.state.peliculasPop.concat(data.results),
           page: this.state.page+1,
+          backup: data.results,
         })
       )
       .catch(function(error){
@@ -59,9 +62,10 @@ class TodasPopu extends Component   {
     <React.Fragment>
         <section className="main-index">
         <h2 className="titulo"> Todas las películas populares </h2>  
+        <Filtro filtrarPeliculas={(texto) => this.filtrarPeliculas(texto)} />
         {this.state.peliculasPop.length >0?
               <section className="recommended_series">
-                  {this.state.peliculasPop.map((unaPelicula, idx) => <PeliculaCard key={unaPelicula + idx} datosPeliculacula={unaPelicula} />
+                  {this.state.peliculasPop.map((unaPelicula, idx) => <PeliculaCard key={unaPelicula + idx} datosPelicula={unaPelicula} />
                   )
               }
           </section>:
@@ -82,7 +86,7 @@ export default TodasPopu;
             <section className="recommended_movies">
                 {  
                     this.state.peliculasPop.map(
-                        (unaPelicula,idx) => <PeliculaCard key={unaPelicula + idx} datosPeliculacula={unaPelicula}/>
+                        (unaPelicula,idx) => <PeliculaCard key={unaPelicula + idx} datosPeliculaculacula={unaPelicula}/>
                     )
                 }
                 <button  onClick={()=>this.traerMas(this.state.peliculasPop)} className="botonfavoritos" > Traer más </button>

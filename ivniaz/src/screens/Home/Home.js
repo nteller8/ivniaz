@@ -39,8 +39,11 @@ class Home extends Component {
     return (
       <React.Fragment>
             <section className="main-index">
-              <h2 className="titulo"> Peliculas Populares </h2>  
-              <Link to='/todaspopu'><button className="boton">Ver todas</button> </Link>
+              <h2 className="titulo">Peliculas Populares</h2>    {/* DESPUES METEMOS LINK HACIA POPULARES */}
+              <Link to='/todaspopu'>
+            {/* ver todas */}
+              <button className="boton">Ver todas</button> 
+            </Link>
               {this.state.peliculasPop.length >0?
                     <section className="recommended_series">
                         {this.state.peliculasPop.slice(0, 5).map((unaPelicula, idx) => <PeliculaCard key={unaPelicula + idx} datosPelicula={unaPelicula} />
@@ -51,7 +54,7 @@ class Home extends Component {
             }
         </section>
           <section className="main-index">
-               <h2 className="titulo">Peliculas en Cartelera</h2>  
+               <h2 className="titulo">Peliculas en Cartelera</h2>  {/* DESPUES METEMOS LINK HACIA PELI CARTELERA */}
                <Link to={'/todascarte'}>
             {/* ver todas */}
               <button className="boton">Ver todas</button> 

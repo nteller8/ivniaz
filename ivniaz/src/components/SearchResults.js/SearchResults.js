@@ -25,7 +25,7 @@ class SearchResults extends Component {
             <h2 className='titulo'>Resultados de Búsqueda</h2> 
             <div className="recommended_movies">  
             {this.state.peliculaBuscada.length > 0 ?
-            <section className="main-index">
+            <section className="recommended_series">
             {this.state.peliculaBuscada.map((peli,idx) => <PeliculaCard key={peli + idx} datosPelicula={peli}/>)} 
             </section>:
             <h3> Loading...</h3> }

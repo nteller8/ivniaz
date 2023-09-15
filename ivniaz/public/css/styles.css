@@ -48,7 +48,14 @@ body {
 }
 
 
-
+.recommended_series{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    scroll-snap-type: x ;
+    overflow-x: scroll;  
+    margin-bottom: 10%; 
+}
 
 
 
@@ -125,17 +132,12 @@ body {
     display: inline-flex;
 }
 
-.bloque-portada {
-    /* bloque de cada pelicula individualmente */
-    width: 250px;
-    height: 300px;
-    margin-left: 30px;
-}
+
 
 .portada {
     /* imagenes de las peliculas */
     width: 215px;
-    height: 300px;
+
     margin-top: 20px;
     margin-left: 20px;
 }
