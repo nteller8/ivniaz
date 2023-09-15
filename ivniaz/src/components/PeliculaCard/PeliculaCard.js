@@ -36,10 +36,3 @@ class PeliculaCard extends Component {
 }
 
 export default PeliculaCard;
-
-
-
-
-
-
-
