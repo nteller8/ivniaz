@@ -13,6 +13,7 @@ class TodasPopu extends Component   {
     };
   }
 
+  
   componenDidMount (){
   fetch('https://api.themoviedb.org/3/movie/popular?api_key=400f43d154bc968e0f7c02f3b9187c48&language=en-US&page=1'+this.state.page)
   .then((res) => res.json())
@@ -28,8 +29,8 @@ class TodasPopu extends Component   {
 
 
   filtrarPeliculas(textoInput) {
-    let peliculasFiltradas = this.state.peliculasPop.filter((datosPeli) => {
-      return datosPeli.title.includes(textoInput);
+    let peliculasFiltradas = this.state.peliculasPop.filter((datosPelicula) => {
+      return datosPelicula.title.includes(textoInput);
     });
     this.setState({
       peliculasPop: peliculasFiltradas,
@@ -52,27 +53,40 @@ class TodasPopu extends Component   {
       });
       }
       
-        render (){
-          console.log(this.setState.peliculasPop)
-          return(
-          <React.Fragment>
-             <h1 className="titulo"> Todas las peliculas populares</h1>
-             
-            <Filtro filtrado={(texto) => this.filtrarPeliculas(texto)} />
+  render (){
+    console.log(this.setState.peliculasPop)
+    return(
+    <React.Fragment>
+        <section className="main-index">
+        <h2 className="titulo"> Todas las películas populares </h2>  
+        {this.state.peliculasPop.length >0?
+              <section className="recommended_series">
+                  {this.state.peliculasPop.map((unaPelicula, idx) => <PeliculaCard key={unaPelicula + idx} datosPeliculacula={unaPelicula} />
+                  )
+              }
+          </section>:
+          <h2> Cargando...</h2>
+      }
+  </section>
+      
+    </React.Fragment>
+    )
+}
+}
+export default TodasPopu;
+
+{/* ver todas
+<Filtro filtrado={(texto) => this.filtrarPeliculas(texto)} />
             {
                 this.state.peliculasPop.length >0?
             <section className="recommended_movies">
                 {  
                     this.state.peliculasPop.map(
-                        (unaPelicula,idx) => <PeliculaCard key={unaPelicula + idx} datosPelicula={unaPelicula}/>
+                        (unaPelicula,idx) => <PeliculaCard key={unaPelicula + idx} datosPeliculacula={unaPelicula}/>
                     )
                 }
                 <button  onClick={()=>this.traerMas(this.state.peliculasPop)} className="botonfavoritos" > Traer más </button>
             </section>:
             <h3> Espere un momento...</h3> 
             }
-          </React.Fragment>
-          )
-      }
-    }
-export default TodasPopu;
+*/}
