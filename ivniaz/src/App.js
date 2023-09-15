@@ -23,9 +23,9 @@ function App() {
         <Route path="/favorites" component={Favorites} />
         <Route path="/detail/:id" component={Detail} />
         <Route path="/searchresults/:searchresults" component={SearchResults} />
-        <Route path="*" component={NoEncontrada} />
         <Route path="/todaspopu" component={TodasPopu} />
         <Route path="/todascarte" component={TodasCarte} />
+        <Route path="" component={NoEncontrada} />
       </Switch>
       <Footer />
 
