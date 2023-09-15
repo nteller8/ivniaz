@@ -1,6 +1,6 @@
 import React from "react";
-import PeliculaCard from "../PeliculaCard/PeliculaCard";
-import Filtro from "../Filtro/Filtro";
+import PeliculaCard from "../../components/PeliculaCard/PeliculaCard";
+import Filtro from "../../components/Filtro/Filtro";
 import { Component } from "react";
 
 class TodasPopu extends Component   {
