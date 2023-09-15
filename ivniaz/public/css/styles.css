@@ -48,14 +48,6 @@ body {
 }
 
 
-.recommended_series{
-    display: flex;
-    flex-wrap: nowrap;
-    flex-direction: row;
-    scroll-snap-type: x ;
-    overflow-x: scroll;  
-    margin-bottom: 10%; 
-}
 
 
 
@@ -121,8 +113,7 @@ body {
     font-size: 10px;
 }
 
-.recommended_series,
-.recommended_movies,
+
 .top_movies {
     display: flex;
     height: 400px;

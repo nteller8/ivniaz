@@ -25,8 +25,8 @@ class Filtro extends Component {
         console.log(this.props);
         return (
             <div className="formDeBusqueda">
-                <form className="filter" action="" method='GET' onSubmit={(e) => this.controlarEnvio(e)}>
-                    <input value={this.state.textoDelInput} className="search" type="text" name='filtro' placeholder="¿Qué queres filtrar?" onChange={(e) => this.guardarDatosDelInput(e)} value={this.state.textoDelInput} />
+                <form style={{color: "black"}} className="filter" action="" method='GET' onSubmit={(e) => this.controlarEnvio(e)}>
+                    <input style={{color: "black"}} value={this.state.textoDelInput} className="search" type="text"  name='filtro' placeholder="¿Qué queres filtrar?" onChange={(e) => this.guardarDatosDelInput(e)}  />
                     <button className="bottonsearch" type='submit'>Filtrar</button>
                 </form>
             </div>

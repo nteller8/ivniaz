@@ -24,7 +24,7 @@ class Buscador extends Component {
         return(
               <div className="formDeBusqueda">
               <form className="busqueda"  method="GET" onSubmit={(event) => this.controlarEnvio(event)}>
-                  <input style={{color: "black"}} className="search" type="text" name="Search" placeholder="¿Qué queres ver?" onChange={(e)=>this.guardarDatosDelInput(e)} value={this.state.textoDelInput}/> 
+                  <input  className="search" type="text" name="Search" placeholder="¿Qué queres ver?" onChange={(e)=>this.guardarDatosDelInput(e)} value={this.state.textoDelInput}/> 
                   <Link to ={`/searchresults/${this.state.textoDelInput}`}> <button className="bottonsearch" type="submit">Search</button> </Link>
               </form>
           </div>
