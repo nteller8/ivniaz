@@ -1,12 +1,11 @@
 import React from "react";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
-
 import Favorites from './components/Favorites/Favorites';
 import Detail from './screens/Detail/Detail'
 import Home from './screens/Home/Home';
 import NoEncontrada from './screens/NoEncontrada/NoEncontrada';
-import SearchResults from './screens/SearchResults/SearchResults';
+import SearchResults from './components/SearchResults/SearchResults';
 import Loader from './screens/Loader/Loader';
 import { Route, Switch } from 'react-router-dom';
 import TodasCarte from "./components/TodasCarte/TodasCarte";
