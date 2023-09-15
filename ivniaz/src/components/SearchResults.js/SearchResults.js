@@ -10,7 +10,8 @@ class SearchResults extends Component {
     }
     
     componentDidMount(){
-        fetch(`https://api.themoviedb.org/3/search/movie?api_key=400f43d154bc968e0f7c02f3b9187c48&language=en-US&query=${this.props.match.params.abuscar}&page=1&include_adult=false`)
+        console.log(this.props.match)
+        fetch(`https://api.themoviedb.org/3/search/movie?api_key=400f43d154bc968e0f7c02f3b9187c48&language=en-US&query=${this.props.match.params.searchresults}&page=1&include_adult=false`)
             .then(res => res.json())
             .then(data => this.setState({
                 peliculaBuscada: data.results,
