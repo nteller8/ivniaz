@@ -4,8 +4,8 @@ import Filtro from "../../components/Filtro/Filtro";
 import { Component } from "react";
 
 class TodasPopu extends Component   {
-  constructor(){
-    super()
+  constructor(props){
+    super(props)
     this.state={
       peliculasPop: [],  //aparecen peliculas populares
       boton: false,
@@ -57,6 +57,7 @@ class TodasPopu extends Component   {
           return(
           <React.Fragment>
              <h1 className="titulo"> Todas las peliculas populares</h1>
+             
             <Filtro filtrado={(texto) => this.filtrarPeliculas(texto)} />
             {
                 this.state.peliculasPop.length >0?
