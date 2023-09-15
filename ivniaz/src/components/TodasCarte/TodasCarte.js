@@ -36,7 +36,7 @@ class TodasCarte extends Component   {
 
   traerMas() {
     //Traer la siguiente página de personajes
-    fetch('https://api.themoviedb.org/3/movie/popular?api_key=400f43d154bc968e0f7c02f3b9187c48&language=en-US&page=1'+this.state.page)
+    fetch('https://api.themoviedb.org/3/movie/top_rated?api_key=400f43d154bc968e0f7c02f3b9187c48'+this.state.page)
       .then((res) => res.json())
       .then((data) =>
         this.setState({

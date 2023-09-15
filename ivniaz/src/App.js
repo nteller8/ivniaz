@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
-import AboutUs from './screens/AboutUs/AboutUs';
+
 import Favorites from './components/Favorites/Favorites';
 import Detail from './screens/Detail/Detail'
 import Home from './screens/Home/Home';
@@ -20,7 +20,7 @@ function App() {
       <Header />
       <Switch>
         <Route path="/" exact={true} component={Home} />
-        <Route path="/aboutus" component={AboutUs} />
+ 
         <Route path="/favorites" component={Favorites} />
         <Route path="/detail/:id" component={Detail} />
         <Route path="/searchresults/:searchresults" component={SearchResults} />
